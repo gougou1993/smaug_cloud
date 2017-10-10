@@ -1,5 +1,7 @@
 package smaug.cloud.api.interfaces;
 
+import smaug.cloud.api.vos.TestResponse;
+
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
@@ -14,4 +16,8 @@ public interface TestService {
     @POST
     @Path("test")
     String test();
+
+    @POST
+    @Path("getUser")
+    TestResponse getUser();
 }
