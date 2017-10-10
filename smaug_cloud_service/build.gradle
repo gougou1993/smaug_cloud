@@ -1,0 +1,39 @@
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile(project(":smaug_cloud_api"))
+
+    compile('org.springframework.boot:spring-boot-starter:1.5.2.RELEASE') {
+        exclude(module: 'spring-boot-starter-logging')
+    }
+    compile 'org.springframework.boot:spring-boot-starter-web:1.5.2.RELEASE'
+    compile 'org.mybatis.spring.boot:mybatis-spring-boot-starter:1.1.1'
+    compile 'com.alibaba:druid:1.1.1'
+
+    compile "com.101tec:zkclient:0.8.1"
+    compile 'org.apache.zookeeper:zookeeper:3.4.8'
+
+    compile 'com.baidu.disconf:disconf-core:2.6.8'
+    compile "org.springframework.boot:spring-boot-starter-jersey"
+    compile 'org.projectlombok:lombok:1.16.18'
+    compile 'com.baidu.disconf:disconf-core:2.6.8'
+    compile "com.baidu.disconf:disconf-client:2.6.36"
+
+    compile 'org.jboss.resteasy:resteasy-client:3.0.9.Final'
+    compile 'org.jboss.resteasy:resteasy-jaxrs:3.0.9.Final'
+    compile 'org.jboss.resteasy:resteasy-netty:3.0.14.Final'
+
+    compile 'org.mybatis:mybatis:3.2.1'
+    compile 'tk.mybatis:mapper:3.3.2'
+
+    compile 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.8.9'
+    compile 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.8.9'
+
+}

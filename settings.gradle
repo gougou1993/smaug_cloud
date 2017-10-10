@@ -1,0 +1,4 @@
+include 'smaug_cloud_api'
+include 'smaug_cloud_service'
+include 'smaug_cloud_config'
+
