@@ -1,6 +1,6 @@
 package smaug.cloud.api.interfaces;
 
-import smaug.cloud.api.vos.TestResponse;
+import smaug.cloud.api.vos.test.TestResponse;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

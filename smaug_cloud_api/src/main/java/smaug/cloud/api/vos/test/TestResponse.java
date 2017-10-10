@@ -1,4 +1,4 @@
-package smaug.cloud.api.vos;
+package smaug.cloud.api.vos.test;
 
 import lombok.Data;
 

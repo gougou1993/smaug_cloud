@@ -2,7 +2,7 @@ package smaug.cloud.provider.impl;
 
 import org.springframework.stereotype.Service;
 import smaug.cloud.api.interfaces.TestService;
-import smaug.cloud.api.vos.TestResponse;
+import smaug.cloud.api.vos.test.TestResponse;
 
 /**
  * Created by Allen on 17/10/10.
