@@ -42,14 +42,14 @@ public class DbConfigConst {
      *
      */
     @Value("${druid.smaug.article.url}")
-    public static String activeUrl;
+    public static String articleUrl;
 
 
     @Value("${druid.smaug.article.username}")
-    public static String activeUsername;
+    public static String articleUsername;
 
     @Value("${druid.smaug.article.password}")
-    public static String activePassword;
+    public static String articlePassword;
 
 
 }
