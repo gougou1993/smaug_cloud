@@ -26,7 +26,7 @@ import java.util.List;
 
 @SpringBootApplication
 @EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class})
-@MapperScan(basePackages = {"smaug.cloud.provider"})
+@MapperScan(basePackages = {"smaug.cloud.provider.mappers"})
 public class SmaugCloudApplication extends WebMvcConfigurerAdapter {
     public static void main(String[] args) {
         SpringApplication.run(SmaugCloudApplication.class, args);

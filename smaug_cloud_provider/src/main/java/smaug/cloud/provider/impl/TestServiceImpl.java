@@ -5,8 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import smaug.cloud.api.interfaces.TestService;
+import smaug.cloud.api.vos.article.ArticleResponse;
 import smaug.cloud.api.vos.test.TestResponse;
 import smaug.cloud.api.vos.user.UserResponse;
+import smaug.cloud.data.entity.article.ArticleEntity;
 import smaug.cloud.data.entity.demo.UserEntity;
 import smaug.cloud.provider.helpers.UserHelper;
 
@@ -22,8 +24,7 @@ public class TestServiceImpl extends AbstractService implements TestService {
     @Value("${druid.type}")
     private String druidType;
 
-    @Autowired
-    private UserHelper userHelper;
+
 
 
     @Override
@@ -44,5 +45,12 @@ public class TestServiceImpl extends AbstractService implements TestService {
             return u;
         }).forEach(responses::add);
         return responses;
+    }
+
+    @Override
+    public List<ArticleResponse> articleList() {
+        List<ArticleEntity> articleEntities = articleHelper.articleList();
+
+        return articleHelper.toResponse(articleEntities);
     }
 }

@@ -1,5 +1,6 @@
 package smaug.cloud.api.interfaces;
 
+import smaug.cloud.api.vos.article.ArticleResponse;
 import smaug.cloud.api.vos.test.TestResponse;
 import smaug.cloud.api.vos.user.UserResponse;
 
@@ -23,4 +24,8 @@ public interface TestService {
     @POST
     @Path("userList")
     List<UserResponse> userList();
+
+    @POST
+    @Path("articleList")
+    List<ArticleResponse> articleList();
 }

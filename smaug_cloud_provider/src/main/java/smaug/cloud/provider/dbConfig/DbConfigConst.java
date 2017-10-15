@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 public class DbConfigConst {
 
     @Value("${druid.smaug.driver-class-name}")
-    public String driverClassName;
+    public String driverClassName = "com.mysql.cj.jdbc.Driver";
 
     @Value("${druid.smaug.initial-size}")
     public int initialSize;
@@ -42,14 +42,14 @@ public class DbConfigConst {
      *
      */
     @Value("${druid.smaug.article.url}")
-    public static String articleUrl;
+    public String articleUrl;
 
 
     @Value("${druid.smaug.article.username}")
-    public static String articleUsername;
+    public String articleUsername;
 
     @Value("${druid.smaug.article.password}")
-    public static String articlePassword;
+    public String articlePassword;
 
 
 }

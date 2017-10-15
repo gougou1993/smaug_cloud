@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="smaug.cloud.provider.mappers.article.ArticleEntityMapper" >
+  <resultMap id="BaseResultMap" type="smaug.cloud.data.entity.article.ArticleEntity" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="contentLeft" property="contentleft" jdbcType="VARCHAR" />
+    <result column="authorId" property="authorid" jdbcType="INTEGER" />
+    <result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="contentRight" property="contentright" jdbcType="VARCHAR" />
+    <result column="contentHtml" property="contenthtml" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, title, contentLeft, authorId, createTime, contentRight, contentHtml
+  </sql>
+
+  <select id="getAllArticles" resultMap="BaseResultMap">
+    SELECT * FROM article;
+  </select>
+</mapper>
