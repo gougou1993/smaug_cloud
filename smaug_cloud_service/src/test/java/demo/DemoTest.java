@@ -30,7 +30,7 @@ public class DemoTest {
 
     @Test
     public void testService() {
-        TestResponse response = testService.getUser();
-        logger.info(jsonUtil.toJson(response));
+//        TestResponse response = testService.getUser();
+//        logger.info(jsonUtil.toJson(response));
     }
 }

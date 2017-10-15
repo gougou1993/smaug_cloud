@@ -1,5 +1,6 @@
 package smaug.cloud.api.vos.test;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Data;
 
 /**
@@ -9,4 +10,8 @@ import lombok.Data;
 public class TestResponse {
     private int id;
     private String name;
+    @JSONField(serialize = false)
+    private String address;
+
+    private String druidType;
 }

@@ -1,31 +1,48 @@
 package smaug.cloud.provider.impl;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import smaug.cloud.api.interfaces.TestService;
 import smaug.cloud.api.vos.test.TestResponse;
-import smaug.cloud.common.utils.jsons.FastJsonUtil;
-import smaug.cloud.common.utils.jsons.JsonUtil;
+import smaug.cloud.api.vos.user.UserResponse;
+import smaug.cloud.data.entity.demo.UserEntity;
+import smaug.cloud.provider.helpers.UserHelper;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Allen on 17/10/10.
  */
 @Service("testServiceImpl")
-public class TestServiceImpl implements TestService {
+public class TestServiceImpl extends AbstractService implements TestService {
 
-    protected JsonUtil jsonUtil = new FastJsonUtil();
+    @Value("${druid.type}")
+    private String druidType;
+
+    @Autowired
+    private UserHelper userHelper;
+
 
     @Override
     public String test() {
-        return "test";
+        return druidType;
     }
 
+
     @Override
-    public TestResponse getUser() {
-        TestResponse response = new TestResponse();
-        response.setId(1);
-        response.setName("13");
-        System.out.println(jsonUtil.toJson(response));
-        return response;
+    public List<UserResponse> userList() {
+        List<UserEntity> entities = userHelper.getUserList();
+        List<UserResponse> responses = new ArrayList<>();
+        entities.stream().map(e -> {
+            UserResponse u = new UserResponse();
+            u.setUserName(e.getName());
+            u.setId(e.getId());
+            u.setAge(e.getAge());
+            return u;
+        }).forEach(responses::add);
+        return responses;
     }
 }
