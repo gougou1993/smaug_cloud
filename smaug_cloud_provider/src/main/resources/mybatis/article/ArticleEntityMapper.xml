@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="smaug.cloud.provider.mappers.article.ArticleEntityMapper" >
+<mapper namespace="smaug.cloud.data.mapper.article.ArticleEntityMapper" >
   <resultMap id="BaseResultMap" type="smaug.cloud.data.entity.article.ArticleEntity" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="title" property="title" jdbcType="VARCHAR" />
@@ -13,8 +13,105 @@
   <sql id="Base_Column_List" >
     id, title, contentLeft, authorId, createTime, contentRight, contentHtml
   </sql>
-
-  <select id="getAllArticles" resultMap="BaseResultMap">
-    SELECT * FROM article;
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from article
+    where id = #{id,jdbcType=INTEGER}
   </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from article
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="smaug.cloud.data.entity.article.ArticleEntity" >
+    insert into article (id, title, contentLeft, 
+      authorId, createTime, contentRight, 
+      contentHtml)
+    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{contentleft,jdbcType=VARCHAR}, 
+      #{authorid,jdbcType=INTEGER}, #{createtime,jdbcType=TIMESTAMP}, #{contentright,jdbcType=VARCHAR}, 
+      #{contenthtml,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="smaug.cloud.data.entity.article.ArticleEntity" >
+    insert into article
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="contentleft != null" >
+        contentLeft,
+      </if>
+      <if test="authorid != null" >
+        authorId,
+      </if>
+      <if test="createtime != null" >
+        createTime,
+      </if>
+      <if test="contentright != null" >
+        contentRight,
+      </if>
+      <if test="contenthtml != null" >
+        contentHtml,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="contentleft != null" >
+        #{contentleft,jdbcType=VARCHAR},
+      </if>
+      <if test="authorid != null" >
+        #{authorid,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="contentright != null" >
+        #{contentright,jdbcType=VARCHAR},
+      </if>
+      <if test="contenthtml != null" >
+        #{contenthtml,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="smaug.cloud.data.entity.article.ArticleEntity" >
+    update article
+    <set >
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="contentleft != null" >
+        contentLeft = #{contentleft,jdbcType=VARCHAR},
+      </if>
+      <if test="authorid != null" >
+        authorId = #{authorid,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null" >
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="contentright != null" >
+        contentRight = #{contentright,jdbcType=VARCHAR},
+      </if>
+      <if test="contenthtml != null" >
+        contentHtml = #{contenthtml,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="smaug.cloud.data.entity.article.ArticleEntity" >
+    update article
+    set title = #{title,jdbcType=VARCHAR},
+      contentLeft = #{contentleft,jdbcType=VARCHAR},
+      authorId = #{authorid,jdbcType=INTEGER},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      contentRight = #{contentright,jdbcType=VARCHAR},
+      contentHtml = #{contenthtml,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
 </mapper>
