@@ -26,7 +26,7 @@ import java.util.List;
 
 @SpringBootApplication
 @EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class})
-@MapperScan(basePackages = {"smaug.cloud.provider.mappers"})
+@MapperScan(basePackages = "smaug.cloud.provider.mappers")
 public class SmaugCloudApplication extends WebMvcConfigurerAdapter {
     public static void main(String[] args) {
         SpringApplication.run(SmaugCloudApplication.class, args);
@@ -48,6 +48,8 @@ public class SmaugCloudApplication extends WebMvcConfigurerAdapter {
         config.setSerializerFeatures(SerializerFeature.PrettyFormat);
         List<MediaType> types = new ArrayList<>();
         types.add(MediaType.APPLICATION_JSON_UTF8); //默认utf8
+        //types.add(new MediaType("application/json;charset=gb2312")); //默认utf8
+
         fastJsonHttpMessageConverter.setSupportedMediaTypes(types);
         fastJsonHttpMessageConverter.setFastJsonConfig(config);
         converterList.add(fastJsonHttpMessageConverter);

@@ -1,6 +1,7 @@
 package smaug.cloud.api.interfaces;
 
 import smaug.cloud.api.vos.article.ArticleResponse;
+import smaug.cloud.api.vos.queue.Queuing;
 import smaug.cloud.api.vos.test.TestResponse;
 import smaug.cloud.api.vos.user.UserResponse;
 
@@ -28,4 +29,8 @@ public interface TestService {
     @POST
     @Path("articleList")
     List<ArticleResponse> articleList();
+
+    @POST
+    @Path("queue")
+    List<Queuing> queue();
 }

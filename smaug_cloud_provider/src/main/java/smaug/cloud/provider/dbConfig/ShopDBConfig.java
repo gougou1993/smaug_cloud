@@ -10,7 +10,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-import smaug.service.config.dbConfig.DBConfig;
 
 import javax.sql.DataSource;
 
@@ -18,26 +17,24 @@ import javax.sql.DataSource;
  * Created by naonao on 17/8/5.
  */
 @Configuration
-public class ShopDBConfig {
+public class ShopDBConfig extends DbConfigConst{
 
     /**
      * mapper 地址
      */
-    public static final String MAPPER_PACKAGE = "smaug.service.provider.mapper.shops";
+    public static final String MAPPER_PACKAGE = "smaug.cloud.provider.mapper.shop";
 
-    public static final String XML_PACKAGE = "classpath:mybatis/shops/*.xml";
+    public static final String XML_PACKAGE = "classpath:mybatis/shop/*.xml";
 
-    @Autowired
-    private DBConfig dbConfig;
 
     @Bean(name = "shopsDBSource")
     @Primary
     public DataSource shopsDBSource() {
         DruidDataSource dataSource = new DruidDataSource();
-        dataSource.setDriverClassName(dbConfig.getDriverClassName());
-        dataSource.setUrl(dbConfig.getShopUrl());
-        dataSource.setUsername(dbConfig.getShopUserName());
-        dataSource.setPassword(dbConfig.getShopPassword());
+        dataSource.setDriverClassName(driverClassName);
+        dataSource.setUrl(shopUrl);
+        dataSource.setUsername(shopUsername);
+        dataSource.setPassword(shopPassword);
         dataSource.setEnable(true);
         dataSource.setMaxActive(1000);
         return dataSource;

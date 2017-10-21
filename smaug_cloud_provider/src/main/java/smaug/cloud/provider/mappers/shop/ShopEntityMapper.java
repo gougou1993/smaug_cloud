@@ -1,17 +1,12 @@
 package smaug.cloud.provider.mappers.shop;
 
+import org.apache.ibatis.annotations.Param;
+import org.springframework.context.annotation.Configuration;
 import smaug.cloud.data.entity.shop.ShopEntity;
 
+
 public interface ShopEntityMapper {
-    int deleteByPrimaryKey(Integer shopid);
 
-    int insert(ShopEntity record);
+    ShopEntity selectByPrimaryKey(@Param("shopId") Integer shopid);
 
-    int insertSelective(ShopEntity record);
-
-    ShopEntity selectByPrimaryKey(Integer shopid);
-
-    int updateByPrimaryKeySelective(ShopEntity record);
-
-    int updateByPrimaryKey(ShopEntity record);
 }

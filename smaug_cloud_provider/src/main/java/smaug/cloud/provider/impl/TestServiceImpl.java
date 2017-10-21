@@ -6,11 +6,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import smaug.cloud.api.interfaces.TestService;
 import smaug.cloud.api.vos.article.ArticleResponse;
-import smaug.cloud.api.vos.test.TestResponse;
+import smaug.cloud.api.vos.queue.Queuing;
 import smaug.cloud.api.vos.user.UserResponse;
 import smaug.cloud.data.entity.article.ArticleEntity;
 import smaug.cloud.data.entity.demo.UserEntity;
-import smaug.cloud.provider.helpers.UserHelper;
+import smaug.cloud.data.entity.shop.ShopEntity;
+import smaug.cloud.provider.mappers.shop.ShopEntityMapper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,17 +26,19 @@ public class TestServiceImpl extends AbstractService implements TestService {
     private String druidType;
 
 
-
+    @Autowired
+    private ShopEntityMapper shopEntityMapper;
 
     @Override
     public String test() {
-        return druidType;
+        ShopEntity shopEntity = shopEntityMapper.selectByPrimaryKey(92809);
+        return shopEntity.getShopname();
     }
 
 
     @Override
     public List<UserResponse> userList() {
-        List<UserEntity> entities = userHelper.getUserList();
+        List<UserEntity> entities = new ArrayList<>();//userHelper.getUserList();
         List<UserResponse> responses = new ArrayList<>();
         entities.stream().map(e -> {
             UserResponse u = new UserResponse();
@@ -49,8 +52,13 @@ public class TestServiceImpl extends AbstractService implements TestService {
 
     @Override
     public List<ArticleResponse> articleList() {
-        List<ArticleEntity> articleEntities = articleHelper.articleList();
+        List<ArticleEntity> articleEntities = new ArrayList<>();//articleHelper.getArticle(1);
 
-        return articleHelper.toResponse(articleEntities);
+        return new ArrayList<>();
+    }
+
+    @Override
+    public List<Queuing> queue() {
+        return queueHelper.queue();
     }
 }

@@ -1,17 +1,10 @@
 package smaug.cloud.provider.mappers.queue;
 
+import org.apache.ibatis.annotations.Param;
 import smaug.cloud.data.entity.queue.QueuingEntity;
 
 public interface QueuingEntityMapper {
-    int deleteByPrimaryKey(Long serialid);
 
-    int insert(QueuingEntity record);
+    QueuingEntity selectByPrimaryKey(@Param("serialId") Long serialid);
 
-    int insertSelective(QueuingEntity record);
-
-    QueuingEntity selectByPrimaryKey(Long serialid);
-
-    int updateByPrimaryKeySelective(QueuingEntity record);
-
-    int updateByPrimaryKey(QueuingEntity record);
 }
