@@ -13,30 +13,30 @@
         </commentGenerator>
         <!--数据库链接地址账号密码-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://10.0.21.66:3306/queues?useUnicode=true&amp;useSSL=false&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull&amp;tinyInt1isBit=false&amp;allowMultiQueries=true"
+                        connectionURL="jdbc:mysql://10.0.21.66:3306/restaurant?useUnicode=true&amp;useSSL=false&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull&amp;tinyInt1isBit=false&amp;allowMultiQueries=true"
                         userId="9now_dev" password="9now.321">
         </jdbcConnection>
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
         <!--生成Model类存放位置-->
-        <javaModelGenerator targetPackage="smaug.cloud.data.entity.queue" targetProject="../../../../src/main/java">
+        <javaModelGenerator targetPackage="smaug.cloud.data.entity.shop" targetProject="../../../../src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
         <!--生成映射文件存放位置-->
 
-        <sqlMapGenerator targetPackage="../../mybatis/queue" targetProject="../../resources">
+        <sqlMapGenerator targetPackage="../../mybatis/shop" targetProject="../../resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
         <!--生成Dao类存放位置-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="smaug.cloud.data.mapper.queue"
+        <javaClientGenerator type="XMLMAPPER" targetPackage="smaug.cloud.data.mapper.shop"
                              targetProject="../../../../src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
         <!--生成对应表及类名-->
-        <table tableName="QueuingTable" domainObjectName="QueuingEntity"
+        <table tableName="ShopTable" domainObjectName="ShopEntity"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"
