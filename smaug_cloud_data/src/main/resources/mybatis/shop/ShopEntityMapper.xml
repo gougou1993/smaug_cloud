@@ -1,0 +1,991 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="smaug.cloud.data.mapper.shop.ShopEntityMapper" >
+  <resultMap id="BaseResultMap" type="smaug.cloud.data.entity.shop.ShopEntity" >
+    <id column="ShopID" property="shopid" jdbcType="INTEGER" />
+    <result column="StyleCooking" property="stylecooking" jdbcType="VARCHAR" />
+    <result column="EncryptedShopID" property="encryptedshopid" jdbcType="VARCHAR" />
+    <result column="countryId" property="countryid" jdbcType="SMALLINT" />
+    <result column="AreaID" property="areaid" jdbcType="INTEGER" />
+    <result column="City" property="city" jdbcType="INTEGER" />
+    <result column="Cooperation" property="cooperation" jdbcType="TINYINT" />
+    <result column="NamePinyin" property="namepinyin" jdbcType="VARCHAR" />
+    <result column="CheckWay" property="checkway" jdbcType="TINYINT" />
+    <result column="ShopName" property="shopname" jdbcType="VARCHAR" />
+    <result column="Type" property="type" jdbcType="TINYINT" />
+    <result column="Industry" property="industry" jdbcType="TINYINT" />
+    <result column="ShopType" property="shoptype" jdbcType="INTEGER" />
+    <result column="EntityStore" property="entitystore" jdbcType="TINYINT" />
+    <result column="Tel" property="tel" jdbcType="VARCHAR" />
+    <result column="BookPhone" property="bookphone" jdbcType="VARCHAR" />
+    <result column="Address" property="address" jdbcType="VARCHAR" />
+    <result column="Logo" property="logo" jdbcType="VARCHAR" />
+    <result column="TLogo" property="tlogo" jdbcType="VARCHAR" />
+    <result column="MLogo" property="mlogo" jdbcType="VARCHAR" />
+    <result column="BgImage" property="bgimage" jdbcType="VARCHAR" />
+    <result column="TBgImage" property="tbgimage" jdbcType="VARCHAR" />
+    <result column="MBgImage" property="mbgimage" jdbcType="VARCHAR" />
+    <result column="Integrals" property="integrals" jdbcType="INTEGER" />
+    <result column="Sent" property="sent" jdbcType="BIGINT" />
+    <result column="app_pay" property="appPay" jdbcType="SMALLINT" />
+    <result column="EnterInRate" property="enterinrate" jdbcType="INTEGER" />
+    <result column="VoucherValue" property="vouchervalue" jdbcType="INTEGER" />
+    <result column="IntegralRatio" property="integralratio" jdbcType="REAL" />
+    <result column="ConsumptionRatio" property="consumptionratio" jdbcType="INTEGER" />
+    <result column="Email" property="email" jdbcType="VARCHAR" />
+    <result column="Description" property="description" jdbcType="VARCHAR" />
+    <result column="Services" property="services" jdbcType="VARCHAR" />
+    <result column="c_services" property="cServices" jdbcType="VARCHAR" />
+    <result column="State" property="state" jdbcType="TINYINT" />
+    <result column="Longitude" property="longitude" jdbcType="DOUBLE" />
+    <result column="Latitude" property="latitude" jdbcType="DOUBLE" />
+    <result column="LngGPS" property="lnggps" jdbcType="DOUBLE" />
+    <result column="LatGPS" property="latgps" jdbcType="DOUBLE" />
+    <result column="ManageShopID" property="manageshopid" jdbcType="INTEGER" />
+    <result column="ShoppingmallShopID" property="shoppingmallshopid" jdbcType="INTEGER" />
+    <result column="Traffic" property="traffic" jdbcType="VARCHAR" />
+    <result column="ShopHours" property="shophours" jdbcType="VARCHAR" />
+    <result column="RegNum" property="regnum" jdbcType="VARCHAR" />
+    <result column="RegName" property="regname" jdbcType="VARCHAR" />
+    <result column="LegalPerson" property="legalperson" jdbcType="VARCHAR" />
+    <result column="RegImage" property="regimage" jdbcType="VARCHAR" />
+    <result column="CreateDate" property="createdate" jdbcType="TIMESTAMP" />
+    <result column="VoucherLimitation" property="voucherlimitation" jdbcType="INTEGER" />
+    <result column="OrderPrintNum" property="orderprintnum" jdbcType="INTEGER" />
+    <result column="PayPrintNum" property="payprintnum" jdbcType="INTEGER" />
+    <result column="EnPrint" property="enprint" jdbcType="TINYINT" />
+    <result column="TableCount" property="tablecount" jdbcType="INTEGER" />
+    <result column="GoodUpdateTime" property="goodupdatetime" jdbcType="TIMESTAMP" />
+    <result column="WaitList" property="waitlist" jdbcType="TINYINT" />
+    <result column="OrderDistanceLimit" property="orderdistancelimit" jdbcType="INTEGER" />
+    <result column="QueueVersion" property="queueversion" jdbcType="TIMESTAMP" />
+    <result column="Index" property="index" jdbcType="INTEGER" />
+    <result column="DefineShopID" property="defineshopid" jdbcType="VARCHAR" />
+    <result column="CityAreaID" property="cityareaid" jdbcType="VARCHAR" />
+    <result column="BCID" property="bcid" jdbcType="VARCHAR" />
+    <result column="QueuingTotal" property="queuingtotal" jdbcType="INTEGER" />
+    <result column="ProvinceID" property="provinceid" jdbcType="INTEGER" />
+    <result column="mmShopID" property="mmshopid" jdbcType="INTEGER" />
+    <result column="KuaiCanMode" property="kuaicanmode" jdbcType="TINYINT" />
+    <result column="DisFlag" property="disflag" jdbcType="TINYINT" />
+    <result column="TiyanDian" property="tiyandian" jdbcType="TINYINT" />
+    <result column="DianpingID" property="dianpingid" jdbcType="INTEGER" />
+    <result column="OnLine" property="online" jdbcType="TINYINT" />
+    <result column="forever" property="forever" jdbcType="TINYINT" />
+    <result column="MemFunc" property="memfunc" jdbcType="TINYINT" />
+    <result column="linQu" property="linqu" jdbcType="TINYINT" />
+    <result column="attenActive" property="attenactive" jdbcType="TINYINT" />
+    <result column="Img_Do" property="imgDo" jdbcType="TINYINT" />
+    <result column="offInvalid" property="offinvalid" jdbcType="TINYINT" />
+    <result column="clientManager" property="clientmanager" jdbcType="VARCHAR" />
+    <result column="BookVersion" property="bookversion" jdbcType="TIMESTAMP" />
+    <result column="shareFlag" property="shareflag" jdbcType="TINYINT" />
+    <result column="maxWaitLimit" property="maxwaitlimit" jdbcType="SMALLINT" />
+    <result column="LastTime" property="lasttime" jdbcType="TIMESTAMP" />
+    <result column="location" property="location" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ShopID, StyleCooking, EncryptedShopID, countryId, AreaID, City, Cooperation, NamePinyin, 
+    CheckWay, ShopName, Type, Industry, ShopType, EntityStore, Tel, BookPhone, Address, 
+    Logo, TLogo, MLogo, BgImage, TBgImage, MBgImage, Integrals, Sent, app_pay, EnterInRate, 
+    VoucherValue, IntegralRatio, ConsumptionRatio, Email, Description, Services, c_services, 
+    State, Longitude, Latitude, LngGPS, LatGPS, ManageShopID, ShoppingmallShopID, Traffic, 
+    ShopHours, RegNum, RegName, LegalPerson, RegImage, CreateDate, VoucherLimitation, 
+    OrderPrintNum, PayPrintNum, EnPrint, TableCount, GoodUpdateTime, WaitList, OrderDistanceLimit, 
+    QueueVersion, Index, DefineShopID, CityAreaID, BCID, QueuingTotal, ProvinceID, mmShopID, 
+    KuaiCanMode, DisFlag, TiyanDian, DianpingID, OnLine, forever, MemFunc, linQu, attenActive, 
+    Img_Do, offInvalid, clientManager, BookVersion, shareFlag, maxWaitLimit, LastTime, 
+    location
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from ShopTable
+    where ShopID = #{shopid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from ShopTable
+    where ShopID = #{shopid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="smaug.cloud.data.entity.shop.ShopEntity" >
+    insert into ShopTable (ShopID, StyleCooking, EncryptedShopID, 
+      countryId, AreaID, City, 
+      Cooperation, NamePinyin, CheckWay, 
+      ShopName, Type, Industry, 
+      ShopType, EntityStore, Tel, 
+      BookPhone, Address, Logo, 
+      TLogo, MLogo, BgImage, 
+      TBgImage, MBgImage, Integrals, 
+      Sent, app_pay, EnterInRate, 
+      VoucherValue, IntegralRatio, ConsumptionRatio, 
+      Email, Description, Services, 
+      c_services, State, Longitude, 
+      Latitude, LngGPS, LatGPS, 
+      ManageShopID, ShoppingmallShopID, Traffic, 
+      ShopHours, RegNum, RegName, 
+      LegalPerson, RegImage, CreateDate, 
+      VoucherLimitation, OrderPrintNum, PayPrintNum, 
+      EnPrint, TableCount, GoodUpdateTime, 
+      WaitList, OrderDistanceLimit, QueueVersion, 
+      Index, DefineShopID, CityAreaID, 
+      BCID, QueuingTotal, ProvinceID, 
+      mmShopID, KuaiCanMode, DisFlag, 
+      TiyanDian, DianpingID, OnLine, 
+      forever, MemFunc, linQu, 
+      attenActive, Img_Do, offInvalid, 
+      clientManager, BookVersion, shareFlag, 
+      maxWaitLimit, LastTime, location
+      )
+    values (#{shopid,jdbcType=INTEGER}, #{stylecooking,jdbcType=VARCHAR}, #{encryptedshopid,jdbcType=VARCHAR}, 
+      #{countryid,jdbcType=SMALLINT}, #{areaid,jdbcType=INTEGER}, #{city,jdbcType=INTEGER}, 
+      #{cooperation,jdbcType=TINYINT}, #{namepinyin,jdbcType=VARCHAR}, #{checkway,jdbcType=TINYINT}, 
+      #{shopname,jdbcType=VARCHAR}, #{type,jdbcType=TINYINT}, #{industry,jdbcType=TINYINT}, 
+      #{shoptype,jdbcType=INTEGER}, #{entitystore,jdbcType=TINYINT}, #{tel,jdbcType=VARCHAR}, 
+      #{bookphone,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{logo,jdbcType=VARCHAR}, 
+      #{tlogo,jdbcType=VARCHAR}, #{mlogo,jdbcType=VARCHAR}, #{bgimage,jdbcType=VARCHAR}, 
+      #{tbgimage,jdbcType=VARCHAR}, #{mbgimage,jdbcType=VARCHAR}, #{integrals,jdbcType=INTEGER}, 
+      #{sent,jdbcType=BIGINT}, #{appPay,jdbcType=SMALLINT}, #{enterinrate,jdbcType=INTEGER}, 
+      #{vouchervalue,jdbcType=INTEGER}, #{integralratio,jdbcType=REAL}, #{consumptionratio,jdbcType=INTEGER}, 
+      #{email,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{services,jdbcType=VARCHAR}, 
+      #{cServices,jdbcType=VARCHAR}, #{state,jdbcType=TINYINT}, #{longitude,jdbcType=DOUBLE}, 
+      #{latitude,jdbcType=DOUBLE}, #{lnggps,jdbcType=DOUBLE}, #{latgps,jdbcType=DOUBLE}, 
+      #{manageshopid,jdbcType=INTEGER}, #{shoppingmallshopid,jdbcType=INTEGER}, #{traffic,jdbcType=VARCHAR}, 
+      #{shophours,jdbcType=VARCHAR}, #{regnum,jdbcType=VARCHAR}, #{regname,jdbcType=VARCHAR}, 
+      #{legalperson,jdbcType=VARCHAR}, #{regimage,jdbcType=VARCHAR}, #{createdate,jdbcType=TIMESTAMP}, 
+      #{voucherlimitation,jdbcType=INTEGER}, #{orderprintnum,jdbcType=INTEGER}, #{payprintnum,jdbcType=INTEGER}, 
+      #{enprint,jdbcType=TINYINT}, #{tablecount,jdbcType=INTEGER}, #{goodupdatetime,jdbcType=TIMESTAMP}, 
+      #{waitlist,jdbcType=TINYINT}, #{orderdistancelimit,jdbcType=INTEGER}, #{queueversion,jdbcType=TIMESTAMP}, 
+      #{index,jdbcType=INTEGER}, #{defineshopid,jdbcType=VARCHAR}, #{cityareaid,jdbcType=VARCHAR}, 
+      #{bcid,jdbcType=VARCHAR}, #{queuingtotal,jdbcType=INTEGER}, #{provinceid,jdbcType=INTEGER}, 
+      #{mmshopid,jdbcType=INTEGER}, #{kuaicanmode,jdbcType=TINYINT}, #{disflag,jdbcType=TINYINT}, 
+      #{tiyandian,jdbcType=TINYINT}, #{dianpingid,jdbcType=INTEGER}, #{online,jdbcType=TINYINT}, 
+      #{forever,jdbcType=TINYINT}, #{memfunc,jdbcType=TINYINT}, #{linqu,jdbcType=TINYINT}, 
+      #{attenactive,jdbcType=TINYINT}, #{imgDo,jdbcType=TINYINT}, #{offinvalid,jdbcType=TINYINT}, 
+      #{clientmanager,jdbcType=VARCHAR}, #{bookversion,jdbcType=TIMESTAMP}, #{shareflag,jdbcType=TINYINT}, 
+      #{maxwaitlimit,jdbcType=SMALLINT}, #{lasttime,jdbcType=TIMESTAMP}, #{location,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="smaug.cloud.data.entity.shop.ShopEntity" >
+    insert into ShopTable
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="shopid != null" >
+        ShopID,
+      </if>
+      <if test="stylecooking != null" >
+        StyleCooking,
+      </if>
+      <if test="encryptedshopid != null" >
+        EncryptedShopID,
+      </if>
+      <if test="countryid != null" >
+        countryId,
+      </if>
+      <if test="areaid != null" >
+        AreaID,
+      </if>
+      <if test="city != null" >
+        City,
+      </if>
+      <if test="cooperation != null" >
+        Cooperation,
+      </if>
+      <if test="namepinyin != null" >
+        NamePinyin,
+      </if>
+      <if test="checkway != null" >
+        CheckWay,
+      </if>
+      <if test="shopname != null" >
+        ShopName,
+      </if>
+      <if test="type != null" >
+        Type,
+      </if>
+      <if test="industry != null" >
+        Industry,
+      </if>
+      <if test="shoptype != null" >
+        ShopType,
+      </if>
+      <if test="entitystore != null" >
+        EntityStore,
+      </if>
+      <if test="tel != null" >
+        Tel,
+      </if>
+      <if test="bookphone != null" >
+        BookPhone,
+      </if>
+      <if test="address != null" >
+        Address,
+      </if>
+      <if test="logo != null" >
+        Logo,
+      </if>
+      <if test="tlogo != null" >
+        TLogo,
+      </if>
+      <if test="mlogo != null" >
+        MLogo,
+      </if>
+      <if test="bgimage != null" >
+        BgImage,
+      </if>
+      <if test="tbgimage != null" >
+        TBgImage,
+      </if>
+      <if test="mbgimage != null" >
+        MBgImage,
+      </if>
+      <if test="integrals != null" >
+        Integrals,
+      </if>
+      <if test="sent != null" >
+        Sent,
+      </if>
+      <if test="appPay != null" >
+        app_pay,
+      </if>
+      <if test="enterinrate != null" >
+        EnterInRate,
+      </if>
+      <if test="vouchervalue != null" >
+        VoucherValue,
+      </if>
+      <if test="integralratio != null" >
+        IntegralRatio,
+      </if>
+      <if test="consumptionratio != null" >
+        ConsumptionRatio,
+      </if>
+      <if test="email != null" >
+        Email,
+      </if>
+      <if test="description != null" >
+        Description,
+      </if>
+      <if test="services != null" >
+        Services,
+      </if>
+      <if test="cServices != null" >
+        c_services,
+      </if>
+      <if test="state != null" >
+        State,
+      </if>
+      <if test="longitude != null" >
+        Longitude,
+      </if>
+      <if test="latitude != null" >
+        Latitude,
+      </if>
+      <if test="lnggps != null" >
+        LngGPS,
+      </if>
+      <if test="latgps != null" >
+        LatGPS,
+      </if>
+      <if test="manageshopid != null" >
+        ManageShopID,
+      </if>
+      <if test="shoppingmallshopid != null" >
+        ShoppingmallShopID,
+      </if>
+      <if test="traffic != null" >
+        Traffic,
+      </if>
+      <if test="shophours != null" >
+        ShopHours,
+      </if>
+      <if test="regnum != null" >
+        RegNum,
+      </if>
+      <if test="regname != null" >
+        RegName,
+      </if>
+      <if test="legalperson != null" >
+        LegalPerson,
+      </if>
+      <if test="regimage != null" >
+        RegImage,
+      </if>
+      <if test="createdate != null" >
+        CreateDate,
+      </if>
+      <if test="voucherlimitation != null" >
+        VoucherLimitation,
+      </if>
+      <if test="orderprintnum != null" >
+        OrderPrintNum,
+      </if>
+      <if test="payprintnum != null" >
+        PayPrintNum,
+      </if>
+      <if test="enprint != null" >
+        EnPrint,
+      </if>
+      <if test="tablecount != null" >
+        TableCount,
+      </if>
+      <if test="goodupdatetime != null" >
+        GoodUpdateTime,
+      </if>
+      <if test="waitlist != null" >
+        WaitList,
+      </if>
+      <if test="orderdistancelimit != null" >
+        OrderDistanceLimit,
+      </if>
+      <if test="queueversion != null" >
+        QueueVersion,
+      </if>
+      <if test="index != null" >
+        Index,
+      </if>
+      <if test="defineshopid != null" >
+        DefineShopID,
+      </if>
+      <if test="cityareaid != null" >
+        CityAreaID,
+      </if>
+      <if test="bcid != null" >
+        BCID,
+      </if>
+      <if test="queuingtotal != null" >
+        QueuingTotal,
+      </if>
+      <if test="provinceid != null" >
+        ProvinceID,
+      </if>
+      <if test="mmshopid != null" >
+        mmShopID,
+      </if>
+      <if test="kuaicanmode != null" >
+        KuaiCanMode,
+      </if>
+      <if test="disflag != null" >
+        DisFlag,
+      </if>
+      <if test="tiyandian != null" >
+        TiyanDian,
+      </if>
+      <if test="dianpingid != null" >
+        DianpingID,
+      </if>
+      <if test="online != null" >
+        OnLine,
+      </if>
+      <if test="forever != null" >
+        forever,
+      </if>
+      <if test="memfunc != null" >
+        MemFunc,
+      </if>
+      <if test="linqu != null" >
+        linQu,
+      </if>
+      <if test="attenactive != null" >
+        attenActive,
+      </if>
+      <if test="imgDo != null" >
+        Img_Do,
+      </if>
+      <if test="offinvalid != null" >
+        offInvalid,
+      </if>
+      <if test="clientmanager != null" >
+        clientManager,
+      </if>
+      <if test="bookversion != null" >
+        BookVersion,
+      </if>
+      <if test="shareflag != null" >
+        shareFlag,
+      </if>
+      <if test="maxwaitlimit != null" >
+        maxWaitLimit,
+      </if>
+      <if test="lasttime != null" >
+        LastTime,
+      </if>
+      <if test="location != null" >
+        location,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="shopid != null" >
+        #{shopid,jdbcType=INTEGER},
+      </if>
+      <if test="stylecooking != null" >
+        #{stylecooking,jdbcType=VARCHAR},
+      </if>
+      <if test="encryptedshopid != null" >
+        #{encryptedshopid,jdbcType=VARCHAR},
+      </if>
+      <if test="countryid != null" >
+        #{countryid,jdbcType=SMALLINT},
+      </if>
+      <if test="areaid != null" >
+        #{areaid,jdbcType=INTEGER},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=INTEGER},
+      </if>
+      <if test="cooperation != null" >
+        #{cooperation,jdbcType=TINYINT},
+      </if>
+      <if test="namepinyin != null" >
+        #{namepinyin,jdbcType=VARCHAR},
+      </if>
+      <if test="checkway != null" >
+        #{checkway,jdbcType=TINYINT},
+      </if>
+      <if test="shopname != null" >
+        #{shopname,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=TINYINT},
+      </if>
+      <if test="industry != null" >
+        #{industry,jdbcType=TINYINT},
+      </if>
+      <if test="shoptype != null" >
+        #{shoptype,jdbcType=INTEGER},
+      </if>
+      <if test="entitystore != null" >
+        #{entitystore,jdbcType=TINYINT},
+      </if>
+      <if test="tel != null" >
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="bookphone != null" >
+        #{bookphone,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="logo != null" >
+        #{logo,jdbcType=VARCHAR},
+      </if>
+      <if test="tlogo != null" >
+        #{tlogo,jdbcType=VARCHAR},
+      </if>
+      <if test="mlogo != null" >
+        #{mlogo,jdbcType=VARCHAR},
+      </if>
+      <if test="bgimage != null" >
+        #{bgimage,jdbcType=VARCHAR},
+      </if>
+      <if test="tbgimage != null" >
+        #{tbgimage,jdbcType=VARCHAR},
+      </if>
+      <if test="mbgimage != null" >
+        #{mbgimage,jdbcType=VARCHAR},
+      </if>
+      <if test="integrals != null" >
+        #{integrals,jdbcType=INTEGER},
+      </if>
+      <if test="sent != null" >
+        #{sent,jdbcType=BIGINT},
+      </if>
+      <if test="appPay != null" >
+        #{appPay,jdbcType=SMALLINT},
+      </if>
+      <if test="enterinrate != null" >
+        #{enterinrate,jdbcType=INTEGER},
+      </if>
+      <if test="vouchervalue != null" >
+        #{vouchervalue,jdbcType=INTEGER},
+      </if>
+      <if test="integralratio != null" >
+        #{integralratio,jdbcType=REAL},
+      </if>
+      <if test="consumptionratio != null" >
+        #{consumptionratio,jdbcType=INTEGER},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="services != null" >
+        #{services,jdbcType=VARCHAR},
+      </if>
+      <if test="cServices != null" >
+        #{cServices,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=TINYINT},
+      </if>
+      <if test="longitude != null" >
+        #{longitude,jdbcType=DOUBLE},
+      </if>
+      <if test="latitude != null" >
+        #{latitude,jdbcType=DOUBLE},
+      </if>
+      <if test="lnggps != null" >
+        #{lnggps,jdbcType=DOUBLE},
+      </if>
+      <if test="latgps != null" >
+        #{latgps,jdbcType=DOUBLE},
+      </if>
+      <if test="manageshopid != null" >
+        #{manageshopid,jdbcType=INTEGER},
+      </if>
+      <if test="shoppingmallshopid != null" >
+        #{shoppingmallshopid,jdbcType=INTEGER},
+      </if>
+      <if test="traffic != null" >
+        #{traffic,jdbcType=VARCHAR},
+      </if>
+      <if test="shophours != null" >
+        #{shophours,jdbcType=VARCHAR},
+      </if>
+      <if test="regnum != null" >
+        #{regnum,jdbcType=VARCHAR},
+      </if>
+      <if test="regname != null" >
+        #{regname,jdbcType=VARCHAR},
+      </if>
+      <if test="legalperson != null" >
+        #{legalperson,jdbcType=VARCHAR},
+      </if>
+      <if test="regimage != null" >
+        #{regimage,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null" >
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="voucherlimitation != null" >
+        #{voucherlimitation,jdbcType=INTEGER},
+      </if>
+      <if test="orderprintnum != null" >
+        #{orderprintnum,jdbcType=INTEGER},
+      </if>
+      <if test="payprintnum != null" >
+        #{payprintnum,jdbcType=INTEGER},
+      </if>
+      <if test="enprint != null" >
+        #{enprint,jdbcType=TINYINT},
+      </if>
+      <if test="tablecount != null" >
+        #{tablecount,jdbcType=INTEGER},
+      </if>
+      <if test="goodupdatetime != null" >
+        #{goodupdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="waitlist != null" >
+        #{waitlist,jdbcType=TINYINT},
+      </if>
+      <if test="orderdistancelimit != null" >
+        #{orderdistancelimit,jdbcType=INTEGER},
+      </if>
+      <if test="queueversion != null" >
+        #{queueversion,jdbcType=TIMESTAMP},
+      </if>
+      <if test="index != null" >
+        #{index,jdbcType=INTEGER},
+      </if>
+      <if test="defineshopid != null" >
+        #{defineshopid,jdbcType=VARCHAR},
+      </if>
+      <if test="cityareaid != null" >
+        #{cityareaid,jdbcType=VARCHAR},
+      </if>
+      <if test="bcid != null" >
+        #{bcid,jdbcType=VARCHAR},
+      </if>
+      <if test="queuingtotal != null" >
+        #{queuingtotal,jdbcType=INTEGER},
+      </if>
+      <if test="provinceid != null" >
+        #{provinceid,jdbcType=INTEGER},
+      </if>
+      <if test="mmshopid != null" >
+        #{mmshopid,jdbcType=INTEGER},
+      </if>
+      <if test="kuaicanmode != null" >
+        #{kuaicanmode,jdbcType=TINYINT},
+      </if>
+      <if test="disflag != null" >
+        #{disflag,jdbcType=TINYINT},
+      </if>
+      <if test="tiyandian != null" >
+        #{tiyandian,jdbcType=TINYINT},
+      </if>
+      <if test="dianpingid != null" >
+        #{dianpingid,jdbcType=INTEGER},
+      </if>
+      <if test="online != null" >
+        #{online,jdbcType=TINYINT},
+      </if>
+      <if test="forever != null" >
+        #{forever,jdbcType=TINYINT},
+      </if>
+      <if test="memfunc != null" >
+        #{memfunc,jdbcType=TINYINT},
+      </if>
+      <if test="linqu != null" >
+        #{linqu,jdbcType=TINYINT},
+      </if>
+      <if test="attenactive != null" >
+        #{attenactive,jdbcType=TINYINT},
+      </if>
+      <if test="imgDo != null" >
+        #{imgDo,jdbcType=TINYINT},
+      </if>
+      <if test="offinvalid != null" >
+        #{offinvalid,jdbcType=TINYINT},
+      </if>
+      <if test="clientmanager != null" >
+        #{clientmanager,jdbcType=VARCHAR},
+      </if>
+      <if test="bookversion != null" >
+        #{bookversion,jdbcType=TIMESTAMP},
+      </if>
+      <if test="shareflag != null" >
+        #{shareflag,jdbcType=TINYINT},
+      </if>
+      <if test="maxwaitlimit != null" >
+        #{maxwaitlimit,jdbcType=SMALLINT},
+      </if>
+      <if test="lasttime != null" >
+        #{lasttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="location != null" >
+        #{location,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="smaug.cloud.data.entity.shop.ShopEntity" >
+    update ShopTable
+    <set >
+      <if test="stylecooking != null" >
+        StyleCooking = #{stylecooking,jdbcType=VARCHAR},
+      </if>
+      <if test="encryptedshopid != null" >
+        EncryptedShopID = #{encryptedshopid,jdbcType=VARCHAR},
+      </if>
+      <if test="countryid != null" >
+        countryId = #{countryid,jdbcType=SMALLINT},
+      </if>
+      <if test="areaid != null" >
+        AreaID = #{areaid,jdbcType=INTEGER},
+      </if>
+      <if test="city != null" >
+        City = #{city,jdbcType=INTEGER},
+      </if>
+      <if test="cooperation != null" >
+        Cooperation = #{cooperation,jdbcType=TINYINT},
+      </if>
+      <if test="namepinyin != null" >
+        NamePinyin = #{namepinyin,jdbcType=VARCHAR},
+      </if>
+      <if test="checkway != null" >
+        CheckWay = #{checkway,jdbcType=TINYINT},
+      </if>
+      <if test="shopname != null" >
+        ShopName = #{shopname,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        Type = #{type,jdbcType=TINYINT},
+      </if>
+      <if test="industry != null" >
+        Industry = #{industry,jdbcType=TINYINT},
+      </if>
+      <if test="shoptype != null" >
+        ShopType = #{shoptype,jdbcType=INTEGER},
+      </if>
+      <if test="entitystore != null" >
+        EntityStore = #{entitystore,jdbcType=TINYINT},
+      </if>
+      <if test="tel != null" >
+        Tel = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="bookphone != null" >
+        BookPhone = #{bookphone,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        Address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="logo != null" >
+        Logo = #{logo,jdbcType=VARCHAR},
+      </if>
+      <if test="tlogo != null" >
+        TLogo = #{tlogo,jdbcType=VARCHAR},
+      </if>
+      <if test="mlogo != null" >
+        MLogo = #{mlogo,jdbcType=VARCHAR},
+      </if>
+      <if test="bgimage != null" >
+        BgImage = #{bgimage,jdbcType=VARCHAR},
+      </if>
+      <if test="tbgimage != null" >
+        TBgImage = #{tbgimage,jdbcType=VARCHAR},
+      </if>
+      <if test="mbgimage != null" >
+        MBgImage = #{mbgimage,jdbcType=VARCHAR},
+      </if>
+      <if test="integrals != null" >
+        Integrals = #{integrals,jdbcType=INTEGER},
+      </if>
+      <if test="sent != null" >
+        Sent = #{sent,jdbcType=BIGINT},
+      </if>
+      <if test="appPay != null" >
+        app_pay = #{appPay,jdbcType=SMALLINT},
+      </if>
+      <if test="enterinrate != null" >
+        EnterInRate = #{enterinrate,jdbcType=INTEGER},
+      </if>
+      <if test="vouchervalue != null" >
+        VoucherValue = #{vouchervalue,jdbcType=INTEGER},
+      </if>
+      <if test="integralratio != null" >
+        IntegralRatio = #{integralratio,jdbcType=REAL},
+      </if>
+      <if test="consumptionratio != null" >
+        ConsumptionRatio = #{consumptionratio,jdbcType=INTEGER},
+      </if>
+      <if test="email != null" >
+        Email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        Description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="services != null" >
+        Services = #{services,jdbcType=VARCHAR},
+      </if>
+      <if test="cServices != null" >
+        c_services = #{cServices,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        State = #{state,jdbcType=TINYINT},
+      </if>
+      <if test="longitude != null" >
+        Longitude = #{longitude,jdbcType=DOUBLE},
+      </if>
+      <if test="latitude != null" >
+        Latitude = #{latitude,jdbcType=DOUBLE},
+      </if>
+      <if test="lnggps != null" >
+        LngGPS = #{lnggps,jdbcType=DOUBLE},
+      </if>
+      <if test="latgps != null" >
+        LatGPS = #{latgps,jdbcType=DOUBLE},
+      </if>
+      <if test="manageshopid != null" >
+        ManageShopID = #{manageshopid,jdbcType=INTEGER},
+      </if>
+      <if test="shoppingmallshopid != null" >
+        ShoppingmallShopID = #{shoppingmallshopid,jdbcType=INTEGER},
+      </if>
+      <if test="traffic != null" >
+        Traffic = #{traffic,jdbcType=VARCHAR},
+      </if>
+      <if test="shophours != null" >
+        ShopHours = #{shophours,jdbcType=VARCHAR},
+      </if>
+      <if test="regnum != null" >
+        RegNum = #{regnum,jdbcType=VARCHAR},
+      </if>
+      <if test="regname != null" >
+        RegName = #{regname,jdbcType=VARCHAR},
+      </if>
+      <if test="legalperson != null" >
+        LegalPerson = #{legalperson,jdbcType=VARCHAR},
+      </if>
+      <if test="regimage != null" >
+        RegImage = #{regimage,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null" >
+        CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="voucherlimitation != null" >
+        VoucherLimitation = #{voucherlimitation,jdbcType=INTEGER},
+      </if>
+      <if test="orderprintnum != null" >
+        OrderPrintNum = #{orderprintnum,jdbcType=INTEGER},
+      </if>
+      <if test="payprintnum != null" >
+        PayPrintNum = #{payprintnum,jdbcType=INTEGER},
+      </if>
+      <if test="enprint != null" >
+        EnPrint = #{enprint,jdbcType=TINYINT},
+      </if>
+      <if test="tablecount != null" >
+        TableCount = #{tablecount,jdbcType=INTEGER},
+      </if>
+      <if test="goodupdatetime != null" >
+        GoodUpdateTime = #{goodupdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="waitlist != null" >
+        WaitList = #{waitlist,jdbcType=TINYINT},
+      </if>
+      <if test="orderdistancelimit != null" >
+        OrderDistanceLimit = #{orderdistancelimit,jdbcType=INTEGER},
+      </if>
+      <if test="queueversion != null" >
+        QueueVersion = #{queueversion,jdbcType=TIMESTAMP},
+      </if>
+      <if test="index != null" >
+        Index = #{index,jdbcType=INTEGER},
+      </if>
+      <if test="defineshopid != null" >
+        DefineShopID = #{defineshopid,jdbcType=VARCHAR},
+      </if>
+      <if test="cityareaid != null" >
+        CityAreaID = #{cityareaid,jdbcType=VARCHAR},
+      </if>
+      <if test="bcid != null" >
+        BCID = #{bcid,jdbcType=VARCHAR},
+      </if>
+      <if test="queuingtotal != null" >
+        QueuingTotal = #{queuingtotal,jdbcType=INTEGER},
+      </if>
+      <if test="provinceid != null" >
+        ProvinceID = #{provinceid,jdbcType=INTEGER},
+      </if>
+      <if test="mmshopid != null" >
+        mmShopID = #{mmshopid,jdbcType=INTEGER},
+      </if>
+      <if test="kuaicanmode != null" >
+        KuaiCanMode = #{kuaicanmode,jdbcType=TINYINT},
+      </if>
+      <if test="disflag != null" >
+        DisFlag = #{disflag,jdbcType=TINYINT},
+      </if>
+      <if test="tiyandian != null" >
+        TiyanDian = #{tiyandian,jdbcType=TINYINT},
+      </if>
+      <if test="dianpingid != null" >
+        DianpingID = #{dianpingid,jdbcType=INTEGER},
+      </if>
+      <if test="online != null" >
+        OnLine = #{online,jdbcType=TINYINT},
+      </if>
+      <if test="forever != null" >
+        forever = #{forever,jdbcType=TINYINT},
+      </if>
+      <if test="memfunc != null" >
+        MemFunc = #{memfunc,jdbcType=TINYINT},
+      </if>
+      <if test="linqu != null" >
+        linQu = #{linqu,jdbcType=TINYINT},
+      </if>
+      <if test="attenactive != null" >
+        attenActive = #{attenactive,jdbcType=TINYINT},
+      </if>
+      <if test="imgDo != null" >
+        Img_Do = #{imgDo,jdbcType=TINYINT},
+      </if>
+      <if test="offinvalid != null" >
+        offInvalid = #{offinvalid,jdbcType=TINYINT},
+      </if>
+      <if test="clientmanager != null" >
+        clientManager = #{clientmanager,jdbcType=VARCHAR},
+      </if>
+      <if test="bookversion != null" >
+        BookVersion = #{bookversion,jdbcType=TIMESTAMP},
+      </if>
+      <if test="shareflag != null" >
+        shareFlag = #{shareflag,jdbcType=TINYINT},
+      </if>
+      <if test="maxwaitlimit != null" >
+        maxWaitLimit = #{maxwaitlimit,jdbcType=SMALLINT},
+      </if>
+      <if test="lasttime != null" >
+        LastTime = #{lasttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="location != null" >
+        location = #{location,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ShopID = #{shopid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="smaug.cloud.data.entity.shop.ShopEntity" >
+    update ShopTable
+    set StyleCooking = #{stylecooking,jdbcType=VARCHAR},
+      EncryptedShopID = #{encryptedshopid,jdbcType=VARCHAR},
+      countryId = #{countryid,jdbcType=SMALLINT},
+      AreaID = #{areaid,jdbcType=INTEGER},
+      City = #{city,jdbcType=INTEGER},
+      Cooperation = #{cooperation,jdbcType=TINYINT},
+      NamePinyin = #{namepinyin,jdbcType=VARCHAR},
+      CheckWay = #{checkway,jdbcType=TINYINT},
+      ShopName = #{shopname,jdbcType=VARCHAR},
+      Type = #{type,jdbcType=TINYINT},
+      Industry = #{industry,jdbcType=TINYINT},
+      ShopType = #{shoptype,jdbcType=INTEGER},
+      EntityStore = #{entitystore,jdbcType=TINYINT},
+      Tel = #{tel,jdbcType=VARCHAR},
+      BookPhone = #{bookphone,jdbcType=VARCHAR},
+      Address = #{address,jdbcType=VARCHAR},
+      Logo = #{logo,jdbcType=VARCHAR},
+      TLogo = #{tlogo,jdbcType=VARCHAR},
+      MLogo = #{mlogo,jdbcType=VARCHAR},
+      BgImage = #{bgimage,jdbcType=VARCHAR},
+      TBgImage = #{tbgimage,jdbcType=VARCHAR},
+      MBgImage = #{mbgimage,jdbcType=VARCHAR},
+      Integrals = #{integrals,jdbcType=INTEGER},
+      Sent = #{sent,jdbcType=BIGINT},
+      app_pay = #{appPay,jdbcType=SMALLINT},
+      EnterInRate = #{enterinrate,jdbcType=INTEGER},
+      VoucherValue = #{vouchervalue,jdbcType=INTEGER},
+      IntegralRatio = #{integralratio,jdbcType=REAL},
+      ConsumptionRatio = #{consumptionratio,jdbcType=INTEGER},
+      Email = #{email,jdbcType=VARCHAR},
+      Description = #{description,jdbcType=VARCHAR},
+      Services = #{services,jdbcType=VARCHAR},
+      c_services = #{cServices,jdbcType=VARCHAR},
+      State = #{state,jdbcType=TINYINT},
+      Longitude = #{longitude,jdbcType=DOUBLE},
+      Latitude = #{latitude,jdbcType=DOUBLE},
+      LngGPS = #{lnggps,jdbcType=DOUBLE},
+      LatGPS = #{latgps,jdbcType=DOUBLE},
+      ManageShopID = #{manageshopid,jdbcType=INTEGER},
+      ShoppingmallShopID = #{shoppingmallshopid,jdbcType=INTEGER},
+      Traffic = #{traffic,jdbcType=VARCHAR},
+      ShopHours = #{shophours,jdbcType=VARCHAR},
+      RegNum = #{regnum,jdbcType=VARCHAR},
+      RegName = #{regname,jdbcType=VARCHAR},
+      LegalPerson = #{legalperson,jdbcType=VARCHAR},
+      RegImage = #{regimage,jdbcType=VARCHAR},
+      CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      VoucherLimitation = #{voucherlimitation,jdbcType=INTEGER},
+      OrderPrintNum = #{orderprintnum,jdbcType=INTEGER},
+      PayPrintNum = #{payprintnum,jdbcType=INTEGER},
+      EnPrint = #{enprint,jdbcType=TINYINT},
+      TableCount = #{tablecount,jdbcType=INTEGER},
+      GoodUpdateTime = #{goodupdatetime,jdbcType=TIMESTAMP},
+      WaitList = #{waitlist,jdbcType=TINYINT},
+      OrderDistanceLimit = #{orderdistancelimit,jdbcType=INTEGER},
+      QueueVersion = #{queueversion,jdbcType=TIMESTAMP},
+      Index = #{index,jdbcType=INTEGER},
+      DefineShopID = #{defineshopid,jdbcType=VARCHAR},
+      CityAreaID = #{cityareaid,jdbcType=VARCHAR},
+      BCID = #{bcid,jdbcType=VARCHAR},
+      QueuingTotal = #{queuingtotal,jdbcType=INTEGER},
+      ProvinceID = #{provinceid,jdbcType=INTEGER},
+      mmShopID = #{mmshopid,jdbcType=INTEGER},
+      KuaiCanMode = #{kuaicanmode,jdbcType=TINYINT},
+      DisFlag = #{disflag,jdbcType=TINYINT},
+      TiyanDian = #{tiyandian,jdbcType=TINYINT},
+      DianpingID = #{dianpingid,jdbcType=INTEGER},
+      OnLine = #{online,jdbcType=TINYINT},
+      forever = #{forever,jdbcType=TINYINT},
+      MemFunc = #{memfunc,jdbcType=TINYINT},
+      linQu = #{linqu,jdbcType=TINYINT},
+      attenActive = #{attenactive,jdbcType=TINYINT},
+      Img_Do = #{imgDo,jdbcType=TINYINT},
+      offInvalid = #{offinvalid,jdbcType=TINYINT},
+      clientManager = #{clientmanager,jdbcType=VARCHAR},
+      BookVersion = #{bookversion,jdbcType=TIMESTAMP},
+      shareFlag = #{shareflag,jdbcType=TINYINT},
+      maxWaitLimit = #{maxwaitlimit,jdbcType=SMALLINT},
+      LastTime = #{lasttime,jdbcType=TIMESTAMP},
+      location = #{location,jdbcType=VARCHAR}
+    where ShopID = #{shopid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,57 +1,57 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="smaug.cloud.data.mapper.queue.QueuingEntityMapper" >
-  <resultMap id="BaseResultMap" type="smaug.cloud.data.entity.queue.QueuingEntity" >
-    <id column="SerialID" property="serialid" jdbcType="BIGINT" />
-    <result column="SerialCode" property="serialcode" jdbcType="VARCHAR" />
-    <result column="QType" property="qtype" jdbcType="TINYINT" />
-    <result column="QueueID" property="queueid" jdbcType="INTEGER" />
-    <result column="ShopQueueID" property="shopqueueid" jdbcType="VARCHAR" />
-    <result column="ShopID" property="shopid" jdbcType="INTEGER" />
-    <result column="Type" property="type" jdbcType="TINYINT" />
-    <result column="devType" property="devtype" jdbcType="TINYINT" />
-    <result column="ResetTime" property="resettime" jdbcType="VARCHAR" />
-    <result column="DeviceID" property="deviceid" jdbcType="INTEGER" />
-    <result column="UserID" property="userid" jdbcType="INTEGER" />
-    <result column="openid" property="openid" jdbcType="VARCHAR" />
-    <result column="Mobile" property="mobile" jdbcType="VARCHAR" />
-    <result column="People" property="people" jdbcType="INTEGER" />
-    <result column="Number" property="number" jdbcType="INTEGER" />
-    <result column="QueuingTime" property="queuingtime" jdbcType="TIMESTAMP" />
-    <result column="CreateDate" property="createdate" jdbcType="TIMESTAMP" />
-    <result column="EntrustDate" property="entrustdate" jdbcType="TIMESTAMP" />
-    <result column="State" property="state" jdbcType="TINYINT" />
-    <result column="Del" property="del" jdbcType="TINYINT" />
-    <result column="Remark" property="remark" jdbcType="VARCHAR" />
-    <result column="Reset" property="reset" jdbcType="TINYINT" />
-    <result column="Acked" property="acked" jdbcType="TINYINT" />
-    <result column="LastTime" property="lasttime" jdbcType="TIMESTAMP" />
-    <result column="EventNo" property="eventno" jdbcType="INTEGER" />
-    <result column="ExecTime" property="exectime" jdbcType="TIMESTAMP" />
-    <result column="ManageShopID" property="manageshopid" jdbcType="INTEGER" />
-    <result column="KeepQueuing" property="keepqueuing" jdbcType="TINYINT" />
-    <result column="AllTotal" property="alltotal" jdbcType="SMALLINT" />
-    <result column="EstimateTime" property="estimatetime" jdbcType="INTEGER" />
-    <result column="WaitPeople" property="waitpeople" jdbcType="SMALLINT" />
-    <result column="AllocTime" property="alloctime" jdbcType="TIMESTAMP" />
-    <result column="QRScan" property="qrscan" jdbcType="TINYINT" />
-    <result column="SMSView" property="smsview" jdbcType="TINYINT" />
-    <result column="WeixinView" property="weixinview" jdbcType="TINYINT" />
-    <result column="APPView" property="appview" jdbcType="TINYINT" />
-    <result column="CreditUserGot" property="creditusergot" jdbcType="TINYINT" />
-    <result column="WxNotice" property="wxnotice" jdbcType="TINYINT" />
-    <result column="DiscountID" property="discountid" jdbcType="INTEGER" />
-    <result column="OffNotice" property="offnotice" jdbcType="TINYINT" />
-    <result column="ThirdUrl" property="thirdurl" jdbcType="VARCHAR" />
-    <result column="LastAccess" property="lastaccess" jdbcType="TINYINT" />
-    <result column="EstQueueID" property="estqueueid" jdbcType="INTEGER" />
-    <result column="EstEnTime" property="estentime" jdbcType="SMALLINT" />
-    <result column="MName" property="mname" jdbcType="VARCHAR" />
-    <result column="Times" property="times" jdbcType="TINYINT" />
-    <result column="AuthID" property="authid" jdbcType="INTEGER" />
-    <result column="AuthOrderID" property="authorderid" jdbcType="VARCHAR" />
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="smaug.cloud.data.mapper.queue.QueuingEntityMapper">
+  <resultMap id="BaseResultMap" type="smaug.cloud.data.entity.queue.QueuingEntity">
+    <id column="SerialID" jdbcType="BIGINT" property="serialid" />
+    <result column="SerialCode" jdbcType="VARCHAR" property="serialcode" />
+    <result column="QType" jdbcType="TINYINT" property="qtype" />
+    <result column="QueueID" jdbcType="INTEGER" property="queueid" />
+    <result column="ShopQueueID" jdbcType="VARCHAR" property="shopqueueid" />
+    <result column="ShopID" jdbcType="INTEGER" property="shopid" />
+    <result column="Type" jdbcType="TINYINT" property="type" />
+    <result column="devType" jdbcType="TINYINT" property="devtype" />
+    <result column="ResetTime" jdbcType="VARCHAR" property="resettime" />
+    <result column="DeviceID" jdbcType="INTEGER" property="deviceid" />
+    <result column="UserID" jdbcType="INTEGER" property="userid" />
+    <result column="openid" jdbcType="VARCHAR" property="openid" />
+    <result column="Mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="People" jdbcType="INTEGER" property="people" />
+    <result column="Number" jdbcType="INTEGER" property="number" />
+    <result column="QueuingTime" jdbcType="TIMESTAMP" property="queuingtime" />
+    <result column="CreateDate" jdbcType="TIMESTAMP" property="createdate" />
+    <result column="EntrustDate" jdbcType="TIMESTAMP" property="entrustdate" />
+    <result column="State" jdbcType="TINYINT" property="state" />
+    <result column="Del" jdbcType="TINYINT" property="del" />
+    <result column="Remark" jdbcType="VARCHAR" property="remark" />
+    <result column="Reset" jdbcType="TINYINT" property="reset" />
+    <result column="Acked" jdbcType="TINYINT" property="acked" />
+    <result column="LastTime" jdbcType="TIMESTAMP" property="lasttime" />
+    <result column="EventNo" jdbcType="INTEGER" property="eventno" />
+    <result column="ExecTime" jdbcType="TIMESTAMP" property="exectime" />
+    <result column="ManageShopID" jdbcType="INTEGER" property="manageshopid" />
+    <result column="KeepQueuing" jdbcType="TINYINT" property="keepqueuing" />
+    <result column="AllTotal" jdbcType="SMALLINT" property="alltotal" />
+    <result column="EstimateTime" jdbcType="INTEGER" property="estimatetime" />
+    <result column="WaitPeople" jdbcType="SMALLINT" property="waitpeople" />
+    <result column="AllocTime" jdbcType="TIMESTAMP" property="alloctime" />
+    <result column="QRScan" jdbcType="TINYINT" property="qrscan" />
+    <result column="SMSView" jdbcType="TINYINT" property="smsview" />
+    <result column="WeixinView" jdbcType="TINYINT" property="weixinview" />
+    <result column="APPView" jdbcType="TINYINT" property="appview" />
+    <result column="CreditUserGot" jdbcType="TINYINT" property="creditusergot" />
+    <result column="WxNotice" jdbcType="TINYINT" property="wxnotice" />
+    <result column="DiscountID" jdbcType="INTEGER" property="discountid" />
+    <result column="OffNotice" jdbcType="TINYINT" property="offnotice" />
+    <result column="ThirdUrl" jdbcType="VARCHAR" property="thirdurl" />
+    <result column="LastAccess" jdbcType="TINYINT" property="lastaccess" />
+    <result column="EstQueueID" jdbcType="INTEGER" property="estqueueid" />
+    <result column="EstEnTime" jdbcType="SMALLINT" property="estentime" />
+    <result column="MName" jdbcType="VARCHAR" property="mname" />
+    <result column="Times" jdbcType="TINYINT" property="times" />
+    <result column="AuthID" jdbcType="INTEGER" property="authid" />
+    <result column="AuthOrderID" jdbcType="VARCHAR" property="authorderid" />
   </resultMap>
-  <sql id="Base_Column_List" >
+  <sql id="Base_Column_List">
     SerialID, SerialCode, QType, QueueID, ShopQueueID, ShopID, Type, devType, ResetTime, 
     DeviceID, UserID, openid, Mobile, People, Number, QueuingTime, CreateDate, EntrustDate, 
     State, Del, Remark, Reset, Acked, LastTime, EventNo, ExecTime, ManageShopID, KeepQueuing, 
@@ -59,17 +59,614 @@
     CreditUserGot, WxNotice, DiscountID, OffNotice, ThirdUrl, LastAccess, EstQueueID, 
     EstEnTime, MName, Times, AuthID, AuthOrderID
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from QueuingTable
+    where SerialID = #{serialid,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from QueuingTable
+    where SerialID = #{serialid,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="smaug.cloud.data.entity.queue.QueuingEntity">
+    insert into QueuingTable (SerialID, SerialCode, QType, 
+      QueueID, ShopQueueID, ShopID, 
+      Type, devType, ResetTime, 
+      DeviceID, UserID, openid, 
+      Mobile, People, Number, 
+      QueuingTime, CreateDate, EntrustDate, 
+      State, Del, Remark, 
+      Reset, Acked, LastTime, 
+      EventNo, ExecTime, ManageShopID, 
+      KeepQueuing, AllTotal, EstimateTime, 
+      WaitPeople, AllocTime, QRScan, 
+      SMSView, WeixinView, APPView, 
+      CreditUserGot, WxNotice, DiscountID, 
+      OffNotice, ThirdUrl, LastAccess, 
+      EstQueueID, EstEnTime, MName, 
+      Times, AuthID, AuthOrderID
+      )
+    values (#{serialid,jdbcType=BIGINT}, #{serialcode,jdbcType=VARCHAR}, #{qtype,jdbcType=TINYINT}, 
+      #{queueid,jdbcType=INTEGER}, #{shopqueueid,jdbcType=VARCHAR}, #{shopid,jdbcType=INTEGER}, 
+      #{type,jdbcType=TINYINT}, #{devtype,jdbcType=TINYINT}, #{resettime,jdbcType=VARCHAR}, 
+      #{deviceid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{openid,jdbcType=VARCHAR}, 
+      #{mobile,jdbcType=VARCHAR}, #{people,jdbcType=INTEGER}, #{number,jdbcType=INTEGER}, 
+      #{queuingtime,jdbcType=TIMESTAMP}, #{createdate,jdbcType=TIMESTAMP}, #{entrustdate,jdbcType=TIMESTAMP}, 
+      #{state,jdbcType=TINYINT}, #{del,jdbcType=TINYINT}, #{remark,jdbcType=VARCHAR}, 
+      #{reset,jdbcType=TINYINT}, #{acked,jdbcType=TINYINT}, #{lasttime,jdbcType=TIMESTAMP}, 
+      #{eventno,jdbcType=INTEGER}, #{exectime,jdbcType=TIMESTAMP}, #{manageshopid,jdbcType=INTEGER}, 
+      #{keepqueuing,jdbcType=TINYINT}, #{alltotal,jdbcType=SMALLINT}, #{estimatetime,jdbcType=INTEGER}, 
+      #{waitpeople,jdbcType=SMALLINT}, #{alloctime,jdbcType=TIMESTAMP}, #{qrscan,jdbcType=TINYINT}, 
+      #{smsview,jdbcType=TINYINT}, #{weixinview,jdbcType=TINYINT}, #{appview,jdbcType=TINYINT}, 
+      #{creditusergot,jdbcType=TINYINT}, #{wxnotice,jdbcType=TINYINT}, #{discountid,jdbcType=INTEGER}, 
+      #{offnotice,jdbcType=TINYINT}, #{thirdurl,jdbcType=VARCHAR}, #{lastaccess,jdbcType=TINYINT}, 
+      #{estqueueid,jdbcType=INTEGER}, #{estentime,jdbcType=SMALLINT}, #{mname,jdbcType=VARCHAR}, 
+      #{times,jdbcType=TINYINT}, #{authid,jdbcType=INTEGER}, #{authorderid,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="smaug.cloud.data.entity.queue.QueuingEntity">
+    insert into QueuingTable
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="serialid != null">
+        SerialID,
+      </if>
+      <if test="serialcode != null">
+        SerialCode,
+      </if>
+      <if test="qtype != null">
+        QType,
+      </if>
+      <if test="queueid != null">
+        QueueID,
+      </if>
+      <if test="shopqueueid != null">
+        ShopQueueID,
+      </if>
+      <if test="shopid != null">
+        ShopID,
+      </if>
+      <if test="type != null">
+        Type,
+      </if>
+      <if test="devtype != null">
+        devType,
+      </if>
+      <if test="resettime != null">
+        ResetTime,
+      </if>
+      <if test="deviceid != null">
+        DeviceID,
+      </if>
+      <if test="userid != null">
+        UserID,
+      </if>
+      <if test="openid != null">
+        openid,
+      </if>
+      <if test="mobile != null">
+        Mobile,
+      </if>
+      <if test="people != null">
+        People,
+      </if>
+      <if test="number != null">
+        Number,
+      </if>
+      <if test="queuingtime != null">
+        QueuingTime,
+      </if>
+      <if test="createdate != null">
+        CreateDate,
+      </if>
+      <if test="entrustdate != null">
+        EntrustDate,
+      </if>
+      <if test="state != null">
+        State,
+      </if>
+      <if test="del != null">
+        Del,
+      </if>
+      <if test="remark != null">
+        Remark,
+      </if>
+      <if test="reset != null">
+        Reset,
+      </if>
+      <if test="acked != null">
+        Acked,
+      </if>
+      <if test="lasttime != null">
+        LastTime,
+      </if>
+      <if test="eventno != null">
+        EventNo,
+      </if>
+      <if test="exectime != null">
+        ExecTime,
+      </if>
+      <if test="manageshopid != null">
+        ManageShopID,
+      </if>
+      <if test="keepqueuing != null">
+        KeepQueuing,
+      </if>
+      <if test="alltotal != null">
+        AllTotal,
+      </if>
+      <if test="estimatetime != null">
+        EstimateTime,
+      </if>
+      <if test="waitpeople != null">
+        WaitPeople,
+      </if>
+      <if test="alloctime != null">
+        AllocTime,
+      </if>
+      <if test="qrscan != null">
+        QRScan,
+      </if>
+      <if test="smsview != null">
+        SMSView,
+      </if>
+      <if test="weixinview != null">
+        WeixinView,
+      </if>
+      <if test="appview != null">
+        APPView,
+      </if>
+      <if test="creditusergot != null">
+        CreditUserGot,
+      </if>
+      <if test="wxnotice != null">
+        WxNotice,
+      </if>
+      <if test="discountid != null">
+        DiscountID,
+      </if>
+      <if test="offnotice != null">
+        OffNotice,
+      </if>
+      <if test="thirdurl != null">
+        ThirdUrl,
+      </if>
+      <if test="lastaccess != null">
+        LastAccess,
+      </if>
+      <if test="estqueueid != null">
+        EstQueueID,
+      </if>
+      <if test="estentime != null">
+        EstEnTime,
+      </if>
+      <if test="mname != null">
+        MName,
+      </if>
+      <if test="times != null">
+        Times,
+      </if>
+      <if test="authid != null">
+        AuthID,
+      </if>
+      <if test="authorderid != null">
+        AuthOrderID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="serialid != null">
+        #{serialid,jdbcType=BIGINT},
+      </if>
+      <if test="serialcode != null">
+        #{serialcode,jdbcType=VARCHAR},
+      </if>
+      <if test="qtype != null">
+        #{qtype,jdbcType=TINYINT},
+      </if>
+      <if test="queueid != null">
+        #{queueid,jdbcType=INTEGER},
+      </if>
+      <if test="shopqueueid != null">
+        #{shopqueueid,jdbcType=VARCHAR},
+      </if>
+      <if test="shopid != null">
+        #{shopid,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=TINYINT},
+      </if>
+      <if test="devtype != null">
+        #{devtype,jdbcType=TINYINT},
+      </if>
+      <if test="resettime != null">
+        #{resettime,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceid != null">
+        #{deviceid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="openid != null">
+        #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="people != null">
+        #{people,jdbcType=INTEGER},
+      </if>
+      <if test="number != null">
+        #{number,jdbcType=INTEGER},
+      </if>
+      <if test="queuingtime != null">
+        #{queuingtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createdate != null">
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="entrustdate != null">
+        #{entrustdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=TINYINT},
+      </if>
+      <if test="del != null">
+        #{del,jdbcType=TINYINT},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="reset != null">
+        #{reset,jdbcType=TINYINT},
+      </if>
+      <if test="acked != null">
+        #{acked,jdbcType=TINYINT},
+      </if>
+      <if test="lasttime != null">
+        #{lasttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="eventno != null">
+        #{eventno,jdbcType=INTEGER},
+      </if>
+      <if test="exectime != null">
+        #{exectime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="manageshopid != null">
+        #{manageshopid,jdbcType=INTEGER},
+      </if>
+      <if test="keepqueuing != null">
+        #{keepqueuing,jdbcType=TINYINT},
+      </if>
+      <if test="alltotal != null">
+        #{alltotal,jdbcType=SMALLINT},
+      </if>
+      <if test="estimatetime != null">
+        #{estimatetime,jdbcType=INTEGER},
+      </if>
+      <if test="waitpeople != null">
+        #{waitpeople,jdbcType=SMALLINT},
+      </if>
+      <if test="alloctime != null">
+        #{alloctime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="qrscan != null">
+        #{qrscan,jdbcType=TINYINT},
+      </if>
+      <if test="smsview != null">
+        #{smsview,jdbcType=TINYINT},
+      </if>
+      <if test="weixinview != null">
+        #{weixinview,jdbcType=TINYINT},
+      </if>
+      <if test="appview != null">
+        #{appview,jdbcType=TINYINT},
+      </if>
+      <if test="creditusergot != null">
+        #{creditusergot,jdbcType=TINYINT},
+      </if>
+      <if test="wxnotice != null">
+        #{wxnotice,jdbcType=TINYINT},
+      </if>
+      <if test="discountid != null">
+        #{discountid,jdbcType=INTEGER},
+      </if>
+      <if test="offnotice != null">
+        #{offnotice,jdbcType=TINYINT},
+      </if>
+      <if test="thirdurl != null">
+        #{thirdurl,jdbcType=VARCHAR},
+      </if>
+      <if test="lastaccess != null">
+        #{lastaccess,jdbcType=TINYINT},
+      </if>
+      <if test="estqueueid != null">
+        #{estqueueid,jdbcType=INTEGER},
+      </if>
+      <if test="estentime != null">
+        #{estentime,jdbcType=SMALLINT},
+      </if>
+      <if test="mname != null">
+        #{mname,jdbcType=VARCHAR},
+      </if>
+      <if test="times != null">
+        #{times,jdbcType=TINYINT},
+      </if>
+      <if test="authid != null">
+        #{authid,jdbcType=INTEGER},
+      </if>
+      <if test="authorderid != null">
+        #{authorderid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="smaug.cloud.data.entity.queue.QueuingEntity">
+    update QueuingTable
+    <set>
+      <if test="serialcode != null">
+        SerialCode = #{serialcode,jdbcType=VARCHAR},
+      </if>
+      <if test="qtype != null">
+        QType = #{qtype,jdbcType=TINYINT},
+      </if>
+      <if test="queueid != null">
+        QueueID = #{queueid,jdbcType=INTEGER},
+      </if>
+      <if test="shopqueueid != null">
+        ShopQueueID = #{shopqueueid,jdbcType=VARCHAR},
+      </if>
+      <if test="shopid != null">
+        ShopID = #{shopid,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        Type = #{type,jdbcType=TINYINT},
+      </if>
+      <if test="devtype != null">
+        devType = #{devtype,jdbcType=TINYINT},
+      </if>
+      <if test="resettime != null">
+        ResetTime = #{resettime,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceid != null">
+        DeviceID = #{deviceid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        UserID = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="openid != null">
+        openid = #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        Mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="people != null">
+        People = #{people,jdbcType=INTEGER},
+      </if>
+      <if test="number != null">
+        Number = #{number,jdbcType=INTEGER},
+      </if>
+      <if test="queuingtime != null">
+        QueuingTime = #{queuingtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createdate != null">
+        CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="entrustdate != null">
+        EntrustDate = #{entrustdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="state != null">
+        State = #{state,jdbcType=TINYINT},
+      </if>
+      <if test="del != null">
+        Del = #{del,jdbcType=TINYINT},
+      </if>
+      <if test="remark != null">
+        Remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="reset != null">
+        Reset = #{reset,jdbcType=TINYINT},
+      </if>
+      <if test="acked != null">
+        Acked = #{acked,jdbcType=TINYINT},
+      </if>
+      <if test="lasttime != null">
+        LastTime = #{lasttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="eventno != null">
+        EventNo = #{eventno,jdbcType=INTEGER},
+      </if>
+      <if test="exectime != null">
+        ExecTime = #{exectime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="manageshopid != null">
+        ManageShopID = #{manageshopid,jdbcType=INTEGER},
+      </if>
+      <if test="keepqueuing != null">
+        KeepQueuing = #{keepqueuing,jdbcType=TINYINT},
+      </if>
+      <if test="alltotal != null">
+        AllTotal = #{alltotal,jdbcType=SMALLINT},
+      </if>
+      <if test="estimatetime != null">
+        EstimateTime = #{estimatetime,jdbcType=INTEGER},
+      </if>
+      <if test="waitpeople != null">
+        WaitPeople = #{waitpeople,jdbcType=SMALLINT},
+      </if>
+      <if test="alloctime != null">
+        AllocTime = #{alloctime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="qrscan != null">
+        QRScan = #{qrscan,jdbcType=TINYINT},
+      </if>
+      <if test="smsview != null">
+        SMSView = #{smsview,jdbcType=TINYINT},
+      </if>
+      <if test="weixinview != null">
+        WeixinView = #{weixinview,jdbcType=TINYINT},
+      </if>
+      <if test="appview != null">
+        APPView = #{appview,jdbcType=TINYINT},
+      </if>
+      <if test="creditusergot != null">
+        CreditUserGot = #{creditusergot,jdbcType=TINYINT},
+      </if>
+      <if test="wxnotice != null">
+        WxNotice = #{wxnotice,jdbcType=TINYINT},
+      </if>
+      <if test="discountid != null">
+        DiscountID = #{discountid,jdbcType=INTEGER},
+      </if>
+      <if test="offnotice != null">
+        OffNotice = #{offnotice,jdbcType=TINYINT},
+      </if>
+      <if test="thirdurl != null">
+        ThirdUrl = #{thirdurl,jdbcType=VARCHAR},
+      </if>
+      <if test="lastaccess != null">
+        LastAccess = #{lastaccess,jdbcType=TINYINT},
+      </if>
+      <if test="estqueueid != null">
+        EstQueueID = #{estqueueid,jdbcType=INTEGER},
+      </if>
+      <if test="estentime != null">
+        EstEnTime = #{estentime,jdbcType=SMALLINT},
+      </if>
+      <if test="mname != null">
+        MName = #{mname,jdbcType=VARCHAR},
+      </if>
+      <if test="times != null">
+        Times = #{times,jdbcType=TINYINT},
+      </if>
+      <if test="authid != null">
+        AuthID = #{authid,jdbcType=INTEGER},
+      </if>
+      <if test="authorderid != null">
+        AuthOrderID = #{authorderid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where SerialID = #{serialid,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="smaug.cloud.data.entity.queue.QueuingEntity">
+    update QueuingTable
+    set SerialCode = #{serialcode,jdbcType=VARCHAR},
+      QType = #{qtype,jdbcType=TINYINT},
+      QueueID = #{queueid,jdbcType=INTEGER},
+      ShopQueueID = #{shopqueueid,jdbcType=VARCHAR},
+      ShopID = #{shopid,jdbcType=INTEGER},
+      Type = #{type,jdbcType=TINYINT},
+      devType = #{devtype,jdbcType=TINYINT},
+      ResetTime = #{resettime,jdbcType=VARCHAR},
+      DeviceID = #{deviceid,jdbcType=INTEGER},
+      UserID = #{userid,jdbcType=INTEGER},
+      openid = #{openid,jdbcType=VARCHAR},
+      Mobile = #{mobile,jdbcType=VARCHAR},
+      People = #{people,jdbcType=INTEGER},
+      Number = #{number,jdbcType=INTEGER},
+      QueuingTime = #{queuingtime,jdbcType=TIMESTAMP},
+      CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      EntrustDate = #{entrustdate,jdbcType=TIMESTAMP},
+      State = #{state,jdbcType=TINYINT},
+      Del = #{del,jdbcType=TINYINT},
+      Remark = #{remark,jdbcType=VARCHAR},
+      Reset = #{reset,jdbcType=TINYINT},
+      Acked = #{acked,jdbcType=TINYINT},
+      LastTime = #{lasttime,jdbcType=TIMESTAMP},
+      EventNo = #{eventno,jdbcType=INTEGER},
+      ExecTime = #{exectime,jdbcType=TIMESTAMP},
+      ManageShopID = #{manageshopid,jdbcType=INTEGER},
+      KeepQueuing = #{keepqueuing,jdbcType=TINYINT},
+      AllTotal = #{alltotal,jdbcType=SMALLINT},
+      EstimateTime = #{estimatetime,jdbcType=INTEGER},
+      WaitPeople = #{waitpeople,jdbcType=SMALLINT},
+      AllocTime = #{alloctime,jdbcType=TIMESTAMP},
+      QRScan = #{qrscan,jdbcType=TINYINT},
+      SMSView = #{smsview,jdbcType=TINYINT},
+      WeixinView = #{weixinview,jdbcType=TINYINT},
+      APPView = #{appview,jdbcType=TINYINT},
+      CreditUserGot = #{creditusergot,jdbcType=TINYINT},
+      WxNotice = #{wxnotice,jdbcType=TINYINT},
+      DiscountID = #{discountid,jdbcType=INTEGER},
+      OffNotice = #{offnotice,jdbcType=TINYINT},
+      ThirdUrl = #{thirdurl,jdbcType=VARCHAR},
+      LastAccess = #{lastaccess,jdbcType=TINYINT},
+      EstQueueID = #{estqueueid,jdbcType=INTEGER},
+      EstEnTime = #{estentime,jdbcType=SMALLINT},
+      MName = #{mname,jdbcType=VARCHAR},
+      Times = #{times,jdbcType=TINYINT},
+      AuthID = #{authid,jdbcType=INTEGER},
+      AuthOrderID = #{authorderid,jdbcType=VARCHAR}
+    where SerialID = #{serialid,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="smaug.cloud.data.entity.queue.QueuingEntity">
+    <id column="SerialID" jdbcType="BIGINT" property="serialid" />
+    <result column="SerialCode" jdbcType="VARCHAR" property="serialcode" />
+    <result column="QType" jdbcType="TINYINT" property="qtype" />
+    <result column="QueueID" jdbcType="INTEGER" property="queueid" />
+    <result column="ShopQueueID" jdbcType="VARCHAR" property="shopqueueid" />
+    <result column="ShopID" jdbcType="INTEGER" property="shopid" />
+    <result column="Type" jdbcType="TINYINT" property="type" />
+    <result column="devType" jdbcType="TINYINT" property="devtype" />
+    <result column="ResetTime" jdbcType="VARCHAR" property="resettime" />
+    <result column="DeviceID" jdbcType="INTEGER" property="deviceid" />
+    <result column="UserID" jdbcType="INTEGER" property="userid" />
+    <result column="openid" jdbcType="VARCHAR" property="openid" />
+    <result column="Mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="People" jdbcType="INTEGER" property="people" />
+    <result column="Number" jdbcType="INTEGER" property="number" />
+    <result column="QueuingTime" jdbcType="TIMESTAMP" property="queuingtime" />
+    <result column="CreateDate" jdbcType="TIMESTAMP" property="createdate" />
+    <result column="EntrustDate" jdbcType="TIMESTAMP" property="entrustdate" />
+    <result column="State" jdbcType="TINYINT" property="state" />
+    <result column="Del" jdbcType="TINYINT" property="del" />
+    <result column="Remark" jdbcType="VARCHAR" property="remark" />
+    <result column="Reset" jdbcType="TINYINT" property="reset" />
+    <result column="Acked" jdbcType="TINYINT" property="acked" />
+    <result column="LastTime" jdbcType="TIMESTAMP" property="lasttime" />
+    <result column="EventNo" jdbcType="INTEGER" property="eventno" />
+    <result column="ExecTime" jdbcType="TIMESTAMP" property="exectime" />
+    <result column="ManageShopID" jdbcType="INTEGER" property="manageshopid" />
+    <result column="KeepQueuing" jdbcType="TINYINT" property="keepqueuing" />
+    <result column="AllTotal" jdbcType="SMALLINT" property="alltotal" />
+    <result column="EstimateTime" jdbcType="INTEGER" property="estimatetime" />
+    <result column="WaitPeople" jdbcType="SMALLINT" property="waitpeople" />
+    <result column="AllocTime" jdbcType="TIMESTAMP" property="alloctime" />
+    <result column="QRScan" jdbcType="TINYINT" property="qrscan" />
+    <result column="SMSView" jdbcType="TINYINT" property="smsview" />
+    <result column="WeixinView" jdbcType="TINYINT" property="weixinview" />
+    <result column="APPView" jdbcType="TINYINT" property="appview" />
+    <result column="CreditUserGot" jdbcType="TINYINT" property="creditusergot" />
+    <result column="WxNotice" jdbcType="TINYINT" property="wxnotice" />
+    <result column="DiscountID" jdbcType="INTEGER" property="discountid" />
+    <result column="OffNotice" jdbcType="TINYINT" property="offnotice" />
+    <result column="ThirdUrl" jdbcType="VARCHAR" property="thirdurl" />
+    <result column="LastAccess" jdbcType="TINYINT" property="lastaccess" />
+    <result column="EstQueueID" jdbcType="INTEGER" property="estqueueid" />
+    <result column="EstEnTime" jdbcType="SMALLINT" property="estentime" />
+    <result column="MName" jdbcType="VARCHAR" property="mname" />
+    <result column="Times" jdbcType="TINYINT" property="times" />
+    <result column="AuthID" jdbcType="INTEGER" property="authid" />
+    <result column="AuthOrderID" jdbcType="VARCHAR" property="authorderid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    SerialID, SerialCode, QType, QueueID, ShopQueueID, ShopID, Type, devType, ResetTime, 
+    DeviceID, UserID, openid, Mobile, People, Number, QueuingTime, CreateDate, EntrustDate, 
+    State, Del, Remark, Reset, Acked, LastTime, EventNo, ExecTime, ManageShopID, KeepQueuing, 
+    AllTotal, EstimateTime, WaitPeople, AllocTime, QRScan, SMSView, WeixinView, APPView, 
+    CreditUserGot, WxNotice, DiscountID, OffNotice, ThirdUrl, LastAccess, EstQueueID, 
+    EstEnTime, MName, Times, AuthID, AuthOrderID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from queuingTable
     where SerialID = #{serialid,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from queuingTable
     where SerialID = #{serialid,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="smaug.cloud.data.entity.queue.QueuingEntity" >
+  <insert id="insert" parameterType="smaug.cloud.data.entity.queue.QueuingEntity">
     insert into queuingTable (SerialID, SerialCode, QType, 
       QueueID, ShopQueueID, ShopID, 
       Type, devType, ResetTime, 
@@ -105,449 +702,449 @@
       #{times,jdbcType=TINYINT}, #{authid,jdbcType=INTEGER}, #{authorderid,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="smaug.cloud.data.entity.queue.QueuingEntity" >
+  <insert id="insertSelective" parameterType="smaug.cloud.data.entity.queue.QueuingEntity">
     insert into queuingTable
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="serialid != null" >
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="serialid != null">
         SerialID,
       </if>
-      <if test="serialcode != null" >
+      <if test="serialcode != null">
         SerialCode,
       </if>
-      <if test="qtype != null" >
+      <if test="qtype != null">
         QType,
       </if>
-      <if test="queueid != null" >
+      <if test="queueid != null">
         QueueID,
       </if>
-      <if test="shopqueueid != null" >
+      <if test="shopqueueid != null">
         ShopQueueID,
       </if>
-      <if test="shopid != null" >
+      <if test="shopid != null">
         ShopID,
       </if>
-      <if test="type != null" >
+      <if test="type != null">
         Type,
       </if>
-      <if test="devtype != null" >
+      <if test="devtype != null">
         devType,
       </if>
-      <if test="resettime != null" >
+      <if test="resettime != null">
         ResetTime,
       </if>
-      <if test="deviceid != null" >
+      <if test="deviceid != null">
         DeviceID,
       </if>
-      <if test="userid != null" >
+      <if test="userid != null">
         UserID,
       </if>
-      <if test="openid != null" >
+      <if test="openid != null">
         openid,
       </if>
-      <if test="mobile != null" >
+      <if test="mobile != null">
         Mobile,
       </if>
-      <if test="people != null" >
+      <if test="people != null">
         People,
       </if>
-      <if test="number != null" >
+      <if test="number != null">
         Number,
       </if>
-      <if test="queuingtime != null" >
+      <if test="queuingtime != null">
         QueuingTime,
       </if>
-      <if test="createdate != null" >
+      <if test="createdate != null">
         CreateDate,
       </if>
-      <if test="entrustdate != null" >
+      <if test="entrustdate != null">
         EntrustDate,
       </if>
-      <if test="state != null" >
+      <if test="state != null">
         State,
       </if>
-      <if test="del != null" >
+      <if test="del != null">
         Del,
       </if>
-      <if test="remark != null" >
+      <if test="remark != null">
         Remark,
       </if>
-      <if test="reset != null" >
+      <if test="reset != null">
         Reset,
       </if>
-      <if test="acked != null" >
+      <if test="acked != null">
         Acked,
       </if>
-      <if test="lasttime != null" >
+      <if test="lasttime != null">
         LastTime,
       </if>
-      <if test="eventno != null" >
+      <if test="eventno != null">
         EventNo,
       </if>
-      <if test="exectime != null" >
+      <if test="exectime != null">
         ExecTime,
       </if>
-      <if test="manageshopid != null" >
+      <if test="manageshopid != null">
         ManageShopID,
       </if>
-      <if test="keepqueuing != null" >
+      <if test="keepqueuing != null">
         KeepQueuing,
       </if>
-      <if test="alltotal != null" >
+      <if test="alltotal != null">
         AllTotal,
       </if>
-      <if test="estimatetime != null" >
+      <if test="estimatetime != null">
         EstimateTime,
       </if>
-      <if test="waitpeople != null" >
+      <if test="waitpeople != null">
         WaitPeople,
       </if>
-      <if test="alloctime != null" >
+      <if test="alloctime != null">
         AllocTime,
       </if>
-      <if test="qrscan != null" >
+      <if test="qrscan != null">
         QRScan,
       </if>
-      <if test="smsview != null" >
+      <if test="smsview != null">
         SMSView,
       </if>
-      <if test="weixinview != null" >
+      <if test="weixinview != null">
         WeixinView,
       </if>
-      <if test="appview != null" >
+      <if test="appview != null">
         APPView,
       </if>
-      <if test="creditusergot != null" >
+      <if test="creditusergot != null">
         CreditUserGot,
       </if>
-      <if test="wxnotice != null" >
+      <if test="wxnotice != null">
         WxNotice,
       </if>
-      <if test="discountid != null" >
+      <if test="discountid != null">
         DiscountID,
       </if>
-      <if test="offnotice != null" >
+      <if test="offnotice != null">
         OffNotice,
       </if>
-      <if test="thirdurl != null" >
+      <if test="thirdurl != null">
         ThirdUrl,
       </if>
-      <if test="lastaccess != null" >
+      <if test="lastaccess != null">
         LastAccess,
       </if>
-      <if test="estqueueid != null" >
+      <if test="estqueueid != null">
         EstQueueID,
       </if>
-      <if test="estentime != null" >
+      <if test="estentime != null">
         EstEnTime,
       </if>
-      <if test="mname != null" >
+      <if test="mname != null">
         MName,
       </if>
-      <if test="times != null" >
+      <if test="times != null">
         Times,
       </if>
-      <if test="authid != null" >
+      <if test="authid != null">
         AuthID,
       </if>
-      <if test="authorderid != null" >
+      <if test="authorderid != null">
         AuthOrderID,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="serialid != null" >
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="serialid != null">
         #{serialid,jdbcType=BIGINT},
       </if>
-      <if test="serialcode != null" >
+      <if test="serialcode != null">
         #{serialcode,jdbcType=VARCHAR},
       </if>
-      <if test="qtype != null" >
+      <if test="qtype != null">
         #{qtype,jdbcType=TINYINT},
       </if>
-      <if test="queueid != null" >
+      <if test="queueid != null">
         #{queueid,jdbcType=INTEGER},
       </if>
-      <if test="shopqueueid != null" >
+      <if test="shopqueueid != null">
         #{shopqueueid,jdbcType=VARCHAR},
       </if>
-      <if test="shopid != null" >
+      <if test="shopid != null">
         #{shopid,jdbcType=INTEGER},
       </if>
-      <if test="type != null" >
+      <if test="type != null">
         #{type,jdbcType=TINYINT},
       </if>
-      <if test="devtype != null" >
+      <if test="devtype != null">
         #{devtype,jdbcType=TINYINT},
       </if>
-      <if test="resettime != null" >
+      <if test="resettime != null">
         #{resettime,jdbcType=VARCHAR},
       </if>
-      <if test="deviceid != null" >
+      <if test="deviceid != null">
         #{deviceid,jdbcType=INTEGER},
       </if>
-      <if test="userid != null" >
+      <if test="userid != null">
         #{userid,jdbcType=INTEGER},
       </if>
-      <if test="openid != null" >
+      <if test="openid != null">
         #{openid,jdbcType=VARCHAR},
       </if>
-      <if test="mobile != null" >
+      <if test="mobile != null">
         #{mobile,jdbcType=VARCHAR},
       </if>
-      <if test="people != null" >
+      <if test="people != null">
         #{people,jdbcType=INTEGER},
       </if>
-      <if test="number != null" >
+      <if test="number != null">
         #{number,jdbcType=INTEGER},
       </if>
-      <if test="queuingtime != null" >
+      <if test="queuingtime != null">
         #{queuingtime,jdbcType=TIMESTAMP},
       </if>
-      <if test="createdate != null" >
+      <if test="createdate != null">
         #{createdate,jdbcType=TIMESTAMP},
       </if>
-      <if test="entrustdate != null" >
+      <if test="entrustdate != null">
         #{entrustdate,jdbcType=TIMESTAMP},
       </if>
-      <if test="state != null" >
+      <if test="state != null">
         #{state,jdbcType=TINYINT},
       </if>
-      <if test="del != null" >
+      <if test="del != null">
         #{del,jdbcType=TINYINT},
       </if>
-      <if test="remark != null" >
+      <if test="remark != null">
         #{remark,jdbcType=VARCHAR},
       </if>
-      <if test="reset != null" >
+      <if test="reset != null">
         #{reset,jdbcType=TINYINT},
       </if>
-      <if test="acked != null" >
+      <if test="acked != null">
         #{acked,jdbcType=TINYINT},
       </if>
-      <if test="lasttime != null" >
+      <if test="lasttime != null">
         #{lasttime,jdbcType=TIMESTAMP},
       </if>
-      <if test="eventno != null" >
+      <if test="eventno != null">
         #{eventno,jdbcType=INTEGER},
       </if>
-      <if test="exectime != null" >
+      <if test="exectime != null">
         #{exectime,jdbcType=TIMESTAMP},
       </if>
-      <if test="manageshopid != null" >
+      <if test="manageshopid != null">
         #{manageshopid,jdbcType=INTEGER},
       </if>
-      <if test="keepqueuing != null" >
+      <if test="keepqueuing != null">
         #{keepqueuing,jdbcType=TINYINT},
       </if>
-      <if test="alltotal != null" >
+      <if test="alltotal != null">
         #{alltotal,jdbcType=SMALLINT},
       </if>
-      <if test="estimatetime != null" >
+      <if test="estimatetime != null">
         #{estimatetime,jdbcType=INTEGER},
       </if>
-      <if test="waitpeople != null" >
+      <if test="waitpeople != null">
         #{waitpeople,jdbcType=SMALLINT},
       </if>
-      <if test="alloctime != null" >
+      <if test="alloctime != null">
         #{alloctime,jdbcType=TIMESTAMP},
       </if>
-      <if test="qrscan != null" >
+      <if test="qrscan != null">
         #{qrscan,jdbcType=TINYINT},
       </if>
-      <if test="smsview != null" >
+      <if test="smsview != null">
         #{smsview,jdbcType=TINYINT},
       </if>
-      <if test="weixinview != null" >
+      <if test="weixinview != null">
         #{weixinview,jdbcType=TINYINT},
       </if>
-      <if test="appview != null" >
+      <if test="appview != null">
         #{appview,jdbcType=TINYINT},
       </if>
-      <if test="creditusergot != null" >
+      <if test="creditusergot != null">
         #{creditusergot,jdbcType=TINYINT},
       </if>
-      <if test="wxnotice != null" >
+      <if test="wxnotice != null">
         #{wxnotice,jdbcType=TINYINT},
       </if>
-      <if test="discountid != null" >
+      <if test="discountid != null">
         #{discountid,jdbcType=INTEGER},
       </if>
-      <if test="offnotice != null" >
+      <if test="offnotice != null">
         #{offnotice,jdbcType=TINYINT},
       </if>
-      <if test="thirdurl != null" >
+      <if test="thirdurl != null">
         #{thirdurl,jdbcType=VARCHAR},
       </if>
-      <if test="lastaccess != null" >
+      <if test="lastaccess != null">
         #{lastaccess,jdbcType=TINYINT},
       </if>
-      <if test="estqueueid != null" >
+      <if test="estqueueid != null">
         #{estqueueid,jdbcType=INTEGER},
       </if>
-      <if test="estentime != null" >
+      <if test="estentime != null">
         #{estentime,jdbcType=SMALLINT},
       </if>
-      <if test="mname != null" >
+      <if test="mname != null">
         #{mname,jdbcType=VARCHAR},
       </if>
-      <if test="times != null" >
+      <if test="times != null">
         #{times,jdbcType=TINYINT},
       </if>
-      <if test="authid != null" >
+      <if test="authid != null">
         #{authid,jdbcType=INTEGER},
       </if>
-      <if test="authorderid != null" >
+      <if test="authorderid != null">
         #{authorderid,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="smaug.cloud.data.entity.queue.QueuingEntity" >
+  <update id="updateByPrimaryKeySelective" parameterType="smaug.cloud.data.entity.queue.QueuingEntity">
     update queuingTable
-    <set >
-      <if test="serialcode != null" >
+    <set>
+      <if test="serialcode != null">
         SerialCode = #{serialcode,jdbcType=VARCHAR},
       </if>
-      <if test="qtype != null" >
+      <if test="qtype != null">
         QType = #{qtype,jdbcType=TINYINT},
       </if>
-      <if test="queueid != null" >
+      <if test="queueid != null">
         QueueID = #{queueid,jdbcType=INTEGER},
       </if>
-      <if test="shopqueueid != null" >
+      <if test="shopqueueid != null">
         ShopQueueID = #{shopqueueid,jdbcType=VARCHAR},
       </if>
-      <if test="shopid != null" >
+      <if test="shopid != null">
         ShopID = #{shopid,jdbcType=INTEGER},
       </if>
-      <if test="type != null" >
+      <if test="type != null">
         Type = #{type,jdbcType=TINYINT},
       </if>
-      <if test="devtype != null" >
+      <if test="devtype != null">
         devType = #{devtype,jdbcType=TINYINT},
       </if>
-      <if test="resettime != null" >
+      <if test="resettime != null">
         ResetTime = #{resettime,jdbcType=VARCHAR},
       </if>
-      <if test="deviceid != null" >
+      <if test="deviceid != null">
         DeviceID = #{deviceid,jdbcType=INTEGER},
       </if>
-      <if test="userid != null" >
+      <if test="userid != null">
         UserID = #{userid,jdbcType=INTEGER},
       </if>
-      <if test="openid != null" >
+      <if test="openid != null">
         openid = #{openid,jdbcType=VARCHAR},
       </if>
-      <if test="mobile != null" >
+      <if test="mobile != null">
         Mobile = #{mobile,jdbcType=VARCHAR},
       </if>
-      <if test="people != null" >
+      <if test="people != null">
         People = #{people,jdbcType=INTEGER},
       </if>
-      <if test="number != null" >
+      <if test="number != null">
         Number = #{number,jdbcType=INTEGER},
       </if>
-      <if test="queuingtime != null" >
+      <if test="queuingtime != null">
         QueuingTime = #{queuingtime,jdbcType=TIMESTAMP},
       </if>
-      <if test="createdate != null" >
+      <if test="createdate != null">
         CreateDate = #{createdate,jdbcType=TIMESTAMP},
       </if>
-      <if test="entrustdate != null" >
+      <if test="entrustdate != null">
         EntrustDate = #{entrustdate,jdbcType=TIMESTAMP},
       </if>
-      <if test="state != null" >
+      <if test="state != null">
         State = #{state,jdbcType=TINYINT},
       </if>
-      <if test="del != null" >
+      <if test="del != null">
         Del = #{del,jdbcType=TINYINT},
       </if>
-      <if test="remark != null" >
+      <if test="remark != null">
         Remark = #{remark,jdbcType=VARCHAR},
       </if>
-      <if test="reset != null" >
+      <if test="reset != null">
         Reset = #{reset,jdbcType=TINYINT},
       </if>
-      <if test="acked != null" >
+      <if test="acked != null">
         Acked = #{acked,jdbcType=TINYINT},
       </if>
-      <if test="lasttime != null" >
+      <if test="lasttime != null">
         LastTime = #{lasttime,jdbcType=TIMESTAMP},
       </if>
-      <if test="eventno != null" >
+      <if test="eventno != null">
         EventNo = #{eventno,jdbcType=INTEGER},
       </if>
-      <if test="exectime != null" >
+      <if test="exectime != null">
         ExecTime = #{exectime,jdbcType=TIMESTAMP},
       </if>
-      <if test="manageshopid != null" >
+      <if test="manageshopid != null">
         ManageShopID = #{manageshopid,jdbcType=INTEGER},
       </if>
-      <if test="keepqueuing != null" >
+      <if test="keepqueuing != null">
         KeepQueuing = #{keepqueuing,jdbcType=TINYINT},
       </if>
-      <if test="alltotal != null" >
+      <if test="alltotal != null">
         AllTotal = #{alltotal,jdbcType=SMALLINT},
       </if>
-      <if test="estimatetime != null" >
+      <if test="estimatetime != null">
         EstimateTime = #{estimatetime,jdbcType=INTEGER},
       </if>
-      <if test="waitpeople != null" >
+      <if test="waitpeople != null">
         WaitPeople = #{waitpeople,jdbcType=SMALLINT},
       </if>
-      <if test="alloctime != null" >
+      <if test="alloctime != null">
         AllocTime = #{alloctime,jdbcType=TIMESTAMP},
       </if>
-      <if test="qrscan != null" >
+      <if test="qrscan != null">
         QRScan = #{qrscan,jdbcType=TINYINT},
       </if>
-      <if test="smsview != null" >
+      <if test="smsview != null">
         SMSView = #{smsview,jdbcType=TINYINT},
       </if>
-      <if test="weixinview != null" >
+      <if test="weixinview != null">
         WeixinView = #{weixinview,jdbcType=TINYINT},
       </if>
-      <if test="appview != null" >
+      <if test="appview != null">
         APPView = #{appview,jdbcType=TINYINT},
       </if>
-      <if test="creditusergot != null" >
+      <if test="creditusergot != null">
         CreditUserGot = #{creditusergot,jdbcType=TINYINT},
       </if>
-      <if test="wxnotice != null" >
+      <if test="wxnotice != null">
         WxNotice = #{wxnotice,jdbcType=TINYINT},
       </if>
-      <if test="discountid != null" >
+      <if test="discountid != null">
         DiscountID = #{discountid,jdbcType=INTEGER},
       </if>
-      <if test="offnotice != null" >
+      <if test="offnotice != null">
         OffNotice = #{offnotice,jdbcType=TINYINT},
       </if>
-      <if test="thirdurl != null" >
+      <if test="thirdurl != null">
         ThirdUrl = #{thirdurl,jdbcType=VARCHAR},
       </if>
-      <if test="lastaccess != null" >
+      <if test="lastaccess != null">
         LastAccess = #{lastaccess,jdbcType=TINYINT},
       </if>
-      <if test="estqueueid != null" >
+      <if test="estqueueid != null">
         EstQueueID = #{estqueueid,jdbcType=INTEGER},
       </if>
-      <if test="estentime != null" >
+      <if test="estentime != null">
         EstEnTime = #{estentime,jdbcType=SMALLINT},
       </if>
-      <if test="mname != null" >
+      <if test="mname != null">
         MName = #{mname,jdbcType=VARCHAR},
       </if>
-      <if test="times != null" >
+      <if test="times != null">
         Times = #{times,jdbcType=TINYINT},
       </if>
-      <if test="authid != null" >
+      <if test="authid != null">
         AuthID = #{authid,jdbcType=INTEGER},
       </if>
-      <if test="authorderid != null" >
+      <if test="authorderid != null">
         AuthOrderID = #{authorderid,jdbcType=VARCHAR},
       </if>
     </set>
     where SerialID = #{serialid,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="smaug.cloud.data.entity.queue.QueuingEntity" >
+  <update id="updateByPrimaryKey" parameterType="smaug.cloud.data.entity.queue.QueuingEntity">
     update queuingTable
     set SerialCode = #{serialcode,jdbcType=VARCHAR},
       QType = #{qtype,jdbcType=TINYINT},
