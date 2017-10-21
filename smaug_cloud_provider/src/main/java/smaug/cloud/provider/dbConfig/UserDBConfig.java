@@ -16,43 +16,43 @@ import javax.sql.DataSource;
  * Created by naonao on 17/7/16.
  */
 @Configuration
-@MapperScan(basePackages = OrderDBConfig.MAPPER_PACKAGE, sqlSessionFactoryRef = "queuesSqlSessionFactory")
-public class OrderDBConfig extends DbConfigConst {
+@MapperScan(basePackages = UserDBConfig.MAPPER_PACKAGE, sqlSessionFactoryRef = "demoSqlSessionFactory")
+public class UserDBConfig extends DbConfigConst {
     /**
      * mybatis 实体类
      */
-    public static final String MAPPER_PACKAGE = "smaug.cloud.provider.mappers.queue";
+    public static final String MAPPER_PACKAGE = "smaug.cloud.provider.mappers.demo";
 
     /**
      * sql xml
      */
-    public static final String MAPPER_LOCATION = "classpath:mybatis/queue/*.xml";
+    public static final String MAPPER_LOCATION = "classpath:mybatis/demo/*.xml";
 
 
-    @Bean(name = "queuesDBSource")
-    public DataSource queuesDBSource() {
+    @Bean(name = "demoDBSource")
+    public DataSource demoDBSource() {
         DruidDataSource dataSource = new DruidDataSource();
         dataSource.setDriverClassName(driverClassName);
-        dataSource.setUrl(queueUrl);
-        dataSource.setUsername(queueUsername);
-        dataSource.setPassword(queuePassword);
+        dataSource.setUrl(demoUrl);
+        dataSource.setUsername(demoUsername);
+        dataSource.setPassword(demoPassword);
         dataSource.setEnable(true);
         dataSource.setMaxActive(1000);
         return dataSource;
     }
 
-    @Bean(name = "queuesTransactionManager")
-    public DataSourceTransactionManager queuesTransactionManager() {
-        return new DataSourceTransactionManager(queuesDBSource());
+    @Bean(name = "demoTransactionManager")
+    public DataSourceTransactionManager demoTransactionManager() {
+        return new DataSourceTransactionManager(demoDBSource());
     }
 
-    @Bean(name = "queuesSqlSessionFactory")
-    public SqlSessionFactory queuesSqlSessionFactory(@Qualifier("queuesDBSource") DataSource queuesDBSource)
+    @Bean(name = "demoSqlSessionFactory")
+    public SqlSessionFactory demoSqlSessionFactory(@Qualifier("demoDBSource") DataSource demoDBSource)
             throws Exception {
         final SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
-        sessionFactory.setDataSource(queuesDBSource);
+        sessionFactory.setDataSource(demoDBSource);
         sessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver()
-                .getResources(OrderDBConfig.MAPPER_LOCATION));
+                .getResources(UserDBConfig.MAPPER_LOCATION));
         return sessionFactory.getObject();
     }
 }

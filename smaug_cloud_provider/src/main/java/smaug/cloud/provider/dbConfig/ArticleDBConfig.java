@@ -3,7 +3,6 @@ package smaug.cloud.provider.dbConfig;
 import com.alibaba.druid.pool.DruidDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,43 +16,43 @@ import javax.sql.DataSource;
  * Created by naonao on 17/8/5.
  */
 @Configuration
-public class ShopDBConfig extends DbConfigConst{
+public class ArticleDBConfig extends DbConfigConst{
 
     /**
      * mapper 地址
      */
-    public static final String MAPPER_PACKAGE = "smaug.cloud.provider.mapper.shop";
+    public static final String MAPPER_PACKAGE = "smaug.cloud.provider.mapper.article";
 
-    public static final String XML_PACKAGE = "classpath:mybatis/shop/*.xml";
+    public static final String XML_PACKAGE = "classpath:mybatis/article/*.xml";
 
 
-    @Bean(name = "shopsDBSource")
+    @Bean(name = "articleDBSource")
     @Primary
-    public DataSource shopsDBSource() {
+    public DataSource articleDBSource() {
         DruidDataSource dataSource = new DruidDataSource();
         dataSource.setDriverClassName(driverClassName);
-        dataSource.setUrl(shopUrl);
-        dataSource.setUsername(shopUsername);
-        dataSource.setPassword(shopPassword);
+        dataSource.setUrl(articleUrl);
+        dataSource.setUsername(articleUsername);
+        dataSource.setPassword(articlePassword);
         dataSource.setEnable(true);
         dataSource.setMaxActive(1000);
         return dataSource;
     }
 
-    @Bean(name = "shopsTransactionManager")
+    @Bean(name = "articleTransactionManager")
     @Primary
-    public DataSourceTransactionManager shopsTransactionManager() {
-        return new DataSourceTransactionManager(shopsDBSource());
+    public DataSourceTransactionManager articleTransactionManager() {
+        return new DataSourceTransactionManager(articleDBSource());
     }
 
-    @Bean(name = "shopsSqlSessionFactory")
+    @Bean(name = "articleSqlSessionFactory")
     @Primary
-    public SqlSessionFactory shopsSqlSessionFactory(@Qualifier("shopsDBSource") DataSource shopsDBSource)
+    public SqlSessionFactory articleSqlSessionFactory(@Qualifier("articleDBSource") DataSource articleDBSource)
             throws Exception {
         final SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
-        sessionFactory.setDataSource(shopsDBSource);
+        sessionFactory.setDataSource(articleDBSource);
         sessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver()
-                .getResources(ShopDBConfig.XML_PACKAGE));
+                .getResources(ArticleDBConfig.XML_PACKAGE));
         return sessionFactory.getObject();
     }
 }

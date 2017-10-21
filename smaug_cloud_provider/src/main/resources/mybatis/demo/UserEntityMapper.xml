@@ -13,4 +13,7 @@
   <select id="getUserList" resultMap="BaseResultMap">
     SELECT * FROM user;
   </select>
+  <select id="getUser" resultMap="BaseResultMap">
+    SELECT * FROM user WHERE id = #{id}
+  </select>
 </mapper>

@@ -23,6 +23,10 @@ public interface TestService {
 
 
     @POST
+    @Path("test2")
+    String test2();
+
+    @POST
     @Path("userList")
     List<UserResponse> userList();
 

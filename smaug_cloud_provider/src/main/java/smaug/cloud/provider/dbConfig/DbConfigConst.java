@@ -51,24 +51,5 @@ public class DbConfigConst {
     @Value("${druid.smaug.article.password}")
     public String articlePassword;
 
-    @Value("${druid.smaug.queue.url}")
-    public String queueUrl;
-
-    @Value("${druid.smaug.queue.username}")
-    public String queueUsername;
-
-    @Value("${druid.smaug.queue.password}")
-    public String queuePassword;
-
-
-    @Value("${druid.smaug.shop.url}")
-    public String shopUrl;
-
-    @Value("${druid.smaug.shop.username}")
-    public String shopUsername;
-
-    @Value("${druid.smaug.shop.password}")
-    public String shopPassword;
-
 
 }

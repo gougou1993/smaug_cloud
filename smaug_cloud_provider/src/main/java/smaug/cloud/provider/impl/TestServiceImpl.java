@@ -8,9 +8,12 @@ import smaug.cloud.api.interfaces.TestService;
 import smaug.cloud.api.vos.article.ArticleResponse;
 import smaug.cloud.api.vos.queue.Queuing;
 import smaug.cloud.api.vos.user.UserResponse;
+import smaug.cloud.config.A;
 import smaug.cloud.data.entity.article.ArticleEntity;
 import smaug.cloud.data.entity.demo.UserEntity;
 import smaug.cloud.data.entity.shop.ShopEntity;
+import smaug.cloud.provider.mappers.article.ArticleEntityMapper;
+import smaug.cloud.provider.mappers.demo.UserEntityMapper;
 import smaug.cloud.provider.mappers.shop.ShopEntityMapper;
 
 import java.util.ArrayList;
@@ -27,14 +30,22 @@ public class TestServiceImpl extends AbstractService implements TestService {
 
 
     @Autowired
-    private ShopEntityMapper shopEntityMapper;
+    private ArticleEntityMapper articleEntityMapper;
+
+    @Autowired
+    private UserEntityMapper userEntityMapper;
 
     @Override
     public String test() {
-        ShopEntity shopEntity = shopEntityMapper.selectByPrimaryKey(92809);
-        return shopEntity.getShopname();
+        ArticleEntity articleEntity = articleEntityMapper.selectByPrimaryKey(1);
+        return articleEntity.getTitle();
     }
 
+    @Override
+    public String test2() {
+        UserEntity userEntity = userEntityMapper.getUser(1);
+        return userEntity.getName();
+    }
 
     @Override
     public List<UserResponse> userList() {
