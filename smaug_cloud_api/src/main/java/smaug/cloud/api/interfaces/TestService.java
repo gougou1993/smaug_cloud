@@ -17,12 +17,12 @@ import java.util.List;
 @Produces({"application/json;charset=UTF-8", "text/xml;charset=UTF-8"})
 public interface TestService {
 
-    @POST
+    @GET
     @Path("test")
     String test();
 
 
-    @POST
+    @GET
     @Path("test2")
     String test2();
 
