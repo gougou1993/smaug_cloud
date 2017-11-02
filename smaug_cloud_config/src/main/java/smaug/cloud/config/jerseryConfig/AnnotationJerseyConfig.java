@@ -9,6 +9,6 @@ import org.glassfish.jersey.server.spring.scope.RequestContextFilter;
 public class AnnotationJerseyConfig extends ResourceConfig {
     public AnnotationJerseyConfig() {
         register(RequestContextFilter.class);
-        packages("smaug.cloud.api.interfaces");
+        packages("smaug.cloud.api");
     }
 }

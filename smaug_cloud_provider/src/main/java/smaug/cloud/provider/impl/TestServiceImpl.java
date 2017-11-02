@@ -35,8 +35,9 @@ public class TestServiceImpl extends AbstractService implements TestService {
 
     @Override
     public String test() {
-        ArticleEntity articleEntity = articleEntityMapper.selectByPrimaryKey(1);
-        return articleEntity.getTitle();
+//        ArticleEntity articleEntity = articleEntityMapper.selectByPrimaryKey(1);
+//        return articleEntity.getTitle();
+        return "12312";
     }
 
     @Override
@@ -49,13 +50,13 @@ public class TestServiceImpl extends AbstractService implements TestService {
     public List<UserResponse> userList() {
         List<UserEntity> entities = new ArrayList<>();//userHelper.getUserList();
         List<UserResponse> responses = new ArrayList<>();
-        entities.stream().map(e -> {
-            UserResponse u = new UserResponse();
-            u.setUserName(e.getName());
-            u.setId(e.getId());
-            u.setAge(e.getAge());
-            return u;
-        }).forEach(responses::add);
+//        entities.stream().map(e -> {
+//            UserResponse u = new UserResponse();
+//            u.setUserName(e.getName());
+//            u.setId(e.getId());
+//            u.setAge(e.getAge());
+//            return u;
+//        }).forEach(responses::add);
         return responses;
     }
 

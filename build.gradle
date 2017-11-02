@@ -32,12 +32,17 @@ subprojects {
 	configurations.all {
 		resolutionStrategy.cacheChangingModulesFor 1, 'minutes'
 	}
+	configurations {
+		all*.exclude group: "ch.qos.logback", module: "logback-classic"
+		all*.exclude group: "commons-logging", module: "commons-logging"
+		all*.exclude group: "commons-logging", module: "commons-logging"
+	}
 
 	dependencies {
 		compile('org.springframework.boot:spring-boot-starter:1.5.7.RELEASE') {
 			exclude(module: 'spring-boot-starter-logging')
 		}
-
+		compile 'org.springframework.boot:spring-boot-starter-web:1.5.2.RELEASE'
 		compile('org.slf4j:slf4j-api:1.7.25')
 		compile('org.apache.logging.log4j:log4j-slf4j-impl:2.8.2')
 		compile('org.apache.logging.log4j:log4j-core:2.8.2')
