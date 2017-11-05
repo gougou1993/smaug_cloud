@@ -17,3 +17,14 @@ druid:
 
 logging:
   config: classpath:log4j2.xml
+
+spring:
+  redis:
+    cluster:
+      nodes: 10.0.19.67:6379,10.0.19.68:6379,10.0.19.82:6379,10.0.19.83:6379
+      testOnReturn: true
+      maxIdle: 10
+      minIdle: 2
+      maxWaitMills: 3000
+      testOnBorrow: true
+      maxTotal: 4

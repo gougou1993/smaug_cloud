@@ -13,7 +13,7 @@
         <RollingRandomAccessFile name="SERVICE_LOG_FILE" fileName="${sys:user.dir}/logs/smaug-service-provider.log"
                                  filePattern="$${sys:user.dir}/logs/$${date:yyyyMM}/smaug-service-provider-%d{yyyy-MM-dd}-%i.log.gz">
             <PatternLayout charset="UTF-8"
-                           pattern="{&quot;datatype&quot;:0,&quot;business&quot;:&quot;paidui&quot;,&quot;module&quot;:&quot;paidui&quot;,&quot;currentTime&quot;:&quot;%d&quot;,&quot;level&quot;:&quot;%-5p&quot;,&quot;method&quot;:&quot;%t&quot;,&quot;interface&quot;:&quot;%C&quot;,&quot;data&quot;:&quot;%m&quot;}%n"/>
+                           pattern="{&quot;datatype&quot;:0,&quot;business&quot;:&quot;smaug&quot;,&quot;module&quot;:&quot;smaug&quot;,&quot;currentTime&quot;:&quot;%d&quot;,&quot;level&quot;:&quot;%-5p&quot;,&quot;method&quot;:&quot;%t&quot;,&quot;interface&quot;:&quot;%C&quot;,&quot;data&quot;:&quot;%m&quot;}%n"/>
             <Policies>
                 <TimeBasedTriggeringPolicy/>
                 <SizeBasedTriggeringPolicy size="20 MB"/>

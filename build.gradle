@@ -1,72 +1,62 @@
 subprojects {
-	apply plugin: 'java'
-	apply plugin: 'maven'
+    apply plugin: 'java'
+    apply plugin: 'maven'
 
-	group 'com.smaug'
-	version '1.0-SNAPSHOT'
+    group 'com.smaug'
+    version '1.0-SNAPSHOT'
 
-	targetCompatibility = 1.8
-	sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+    sourceCompatibility = 1.8
 
-	[compileJava, compileTestJava].each() {
-		it.options.encoding = "UTF-8"
-	}
+    [compileJava, compileTestJava].each() {
+        it.options.encoding = "UTF-8"
+    }
 
-	repositories {
-		mavenLocal()
-		maven {
-			url 'http://maven.aliyun.com/nexus/content/groups/public/'
-		}
-		mavenCentral()
-	}
+    repositories {
+        mavenLocal()
+        maven {
+            url 'http://maven.aliyun.com/nexus/content/groups/public/'
+        }
+        mavenCentral()
+    }
 
 
-	task sourcesJar(type: Jar, dependsOn: classes) {
-		classifier = 'sources'
-		from sourceSets.main.allSource
-	}
+    task sourcesJar(type: Jar, dependsOn: classes) {
+        classifier = 'sources'
+        from sourceSets.main.allSource
+    }
 
-	artifacts {
-		archives sourcesJar
-	}
-	configurations.all {
-		resolutionStrategy.cacheChangingModulesFor 1, 'minutes'
-	}
-	configurations {
-		all*.exclude group: "ch.qos.logback", module: "logback-classic"
-		all*.exclude group: "commons-logging", module: "commons-logging"
-		all*.exclude group: "commons-logging", module: "commons-logging"
-	}
+    artifacts {
+        archives sourcesJar
+    }
 
-	dependencies {
-		compile('org.springframework.boot:spring-boot-starter:1.5.7.RELEASE') {
-			exclude(module: 'spring-boot-starter-logging')
-		}
-		compile 'org.springframework.boot:spring-boot-starter-web:1.5.2.RELEASE'
-		compile('org.slf4j:slf4j-api:1.7.25')
-		compile('org.apache.logging.log4j:log4j-slf4j-impl:2.8.2')
-		compile('org.apache.logging.log4j:log4j-core:2.8.2')
-		compile('org.apache.logging.log4j:log4j-web:2.8.2')
+    configurations {
+        all*.exclude group: "ch.qos.logback", module: "logback-classic"
+        all*.exclude group: "commons-logging", module: "commons-logging"
+        all*.exclude group: "org.springframework", module: "spring-webmvc"
+    }
 
-		compile "org.springframework.boot:spring-boot-starter-jersey:1.5.1.RELEASE"
-		compile 'mysql:mysql-connector-java:6.0.6'
-		compile 'org.mybatis.generator:mybatis-generator-core:1.3.5'
-		compile 'org.projectlombok:lombok:1.16.8'
-		compile 'org.springframework:spring-core:4.2.5.RELEASE'
-		compile 'org.springframework:spring-context-support:4.2.5.RELEASE'
-		compile 'org.springframework:spring-beans:4.2.5.RELEASE'
-		compile 'org.springframework:spring-oxm:4.2.5.RELEASE'
-		compile "org.springframework:spring-jms:4.2.5.RELEASE"
-		compile 'org.springframework.retry:spring-retry:1.1.2.RELEASE'
-		compile 'org.springframework:spring-context:4.2.5.RELEASE'
+    dependencies {
+        compile('org.springframework.boot:spring-boot-starter:1.5.7.RELEASE') {
+            exclude(module: 'spring-boot-starter-logging')
+        }
+        compile 'org.springframework.boot:spring-boot-starter-web:1.5.2.RELEASE'
+        compile('org.slf4j:slf4j-api:1.7.25')
+        compile('org.apache.logging.log4j:log4j-slf4j-impl:2.8.2')
+        compile('org.apache.logging.log4j:log4j-core:2.8.2')
+        compile('org.apache.logging.log4j:log4j-web:2.8.2')
+        compile 'org.springframework.boot:spring-boot-starter-data-redis:1.5.8.RELEASE'
 
-		compile 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.8.9'
-		compile 'com.alibaba:fastjson:1.2.38'
 
-		//testCompile "junit:junit:4.12"
-		testCompile 'org.springframework:spring-test:5.0.0.RELEASE'
-		testCompile 'org.springframework.boot:spring-boot-starter-test:1.5.7.RELEASE'
-	}
+        compile "org.springframework.boot:spring-boot-starter-jersey:1.5.1.RELEASE"
+        compile 'mysql:mysql-connector-java:6.0.6'
+        compile 'org.mybatis.generator:mybatis-generator-core:1.3.5'
+        compile 'org.projectlombok:lombok:1.16.8'
+        compile 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.8.9'
+        compile 'com.alibaba:fastjson:1.2.38'
+        compile 'cglib:cglib:3.2.5'
+        testCompile 'org.springframework.boot:spring-boot-starter-test:1.5.7.RELEASE'
+    }
 }
 
 
