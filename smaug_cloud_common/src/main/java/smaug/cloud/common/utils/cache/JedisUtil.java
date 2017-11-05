@@ -1,4 +1,4 @@
-package smaug.cloud.config.jedis;
+package smaug.cloud.common.utils.cache;
 
 import org.springframework.stereotype.Component;
 

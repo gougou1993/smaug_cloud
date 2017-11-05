@@ -2,9 +2,8 @@ package smaug.cloud.provider.impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import smaug.cloud.common.utils.cache.SmaugJedisUtil;
 import smaug.cloud.common.utils.jsons.FastJsonUtil;
-import smaug.cloud.config.jedis.SmaugJedisUtil;
 
 import javax.annotation.Resource;
 

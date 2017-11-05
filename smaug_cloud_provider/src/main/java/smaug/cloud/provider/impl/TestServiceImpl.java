@@ -8,15 +8,11 @@ import smaug.cloud.api.interfaces.TestService;
 import smaug.cloud.api.vos.article.ArticleResponse;
 import smaug.cloud.api.vos.queue.Queuing;
 import smaug.cloud.api.vos.user.UserResponse;
-import smaug.cloud.config.jedis.JedisConfigProperties;
-import smaug.cloud.config.jedis.JedisUtil;
-import smaug.cloud.config.jedis.SmaugJedisUtil;
 import smaug.cloud.data.entity.article.ArticleEntity;
 import smaug.cloud.data.entity.demo.UserEntity;
 import smaug.cloud.provider.mappers.article.ArticleEntityMapper;
 import smaug.cloud.provider.mappers.demo.UserEntityMapper;
 
-import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
