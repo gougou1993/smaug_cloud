@@ -44,21 +44,16 @@ public class JedisClusterConfig {
     }
 
     @Bean
-    public RedisTemplate redisTemplateFactory(){
-        RedisTemplate redisTemplate =new RedisTemplate();
+    public RedisTemplate redisTemplateFactory() {
+        RedisTemplate redisTemplate = new RedisTemplate();
         redisTemplate.setConnectionFactory(jedisConnectionFactory());
         redisTemplate.setDefaultSerializer(new StringRedisSerializer());
-        //指定具体序列化方式  不过这种方式不是很好,一个系统中可能对应值的类型不一样,如果全部使用StringRedisSerializer 序列化
-        //会照成其他类型报错,所以还是推荐使用第一种,直接指定泛型的类型,spring 会根据指定类型序列化。
-        //redisTemplate.setKeySerializer( new StringRedisSerializer());
-        //redisTemplate.setValueSerializer(new StringRedisSerializer());
-        //redisTemplate.setHashKeySerializer(new StringRedisSerializer());
-        //redisTemplate.setHashValueSerializer(new StringRedisSerializer());
         return redisTemplate;
     }
 
     /**
      * redisCluster配置
+     *
      * @return
      */
     @Bean
@@ -69,24 +64,28 @@ public class JedisClusterConfig {
         return new RedisClusterConfiguration(new MapPropertySource("RedisClusterConfiguration", source));
     }
 
+    @Bean
+    public JedisConnectionFactory jedisConnectionFactory() {
+        return new JedisConnectionFactory(redisClusterConfiguration(), jedisPoolConfig());
+    }
 
     /**
-     * 其实在JedisConnectionFactory的afterPropertiesSet()方法 中
-     * if(cluster !=null) this.cluster =createCluster();
-     * 也就是当
-     * spring.redis.cluster.nodes 配置好的情况下,就可以实例化 JedisCluster.
-     * 也就是说,我们使用JedisCluster 的方式只需要在application.properties 配置文件中
-     *
-     * #redis cluster
-     *  spring.redis.cluster.nodes=127.0.0.1:7000,127.0.0.1:7001,127.0.0.1:7002
-     *
-     * RedisTemplate.afterPropertiesSet() 中查看到最终方法中使用了JedisCluster 对象。
-     * 也就是说 redisTemplate依赖jedis ,内部操作的就是jedis,同理内部也操作jedisCluster.
-     *
-     *
+     * 生成 RetryTemplate 用于代替xml 里的<bean></bean> 属性
      * @return
      */
+    @Bean
+    public RetryTemplate retryTemplate() {
+        RetryTemplate retryTemplate = new RetryTemplate();
+        TimeoutRetryPolicy policy = new TimeoutRetryPolicy();
+        policy.setTimeout(50);
+        retryTemplate.setRetryPolicy(policy);
+        return retryTemplate;
+    }
 
+    /**
+     * jedis 连接池
+     * @return
+     */
     private JedisPoolConfig jedisPoolConfig() {
         JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
         jedisPoolConfig.setMaxIdle(jedisConfigProperties.getMaxIdle());
@@ -96,20 +95,6 @@ public class JedisClusterConfig {
         jedisPoolConfig.setTestOnReturn(jedisConfigProperties.isTestOnReturn());
 
         return jedisPoolConfig;
-    }
-
-    @Bean
-    public JedisConnectionFactory jedisConnectionFactory() {
-        return new JedisConnectionFactory(redisClusterConfiguration(), jedisPoolConfig());
-    }
-
-    @Bean
-    public RetryTemplate retryTemplate() {
-        RetryTemplate retryTemplate = new RetryTemplate();
-        TimeoutRetryPolicy policy = new TimeoutRetryPolicy();
-        policy.setTimeout(50);
-        retryTemplate.setRetryPolicy(policy);
-        return retryTemplate;
     }
 }
 
