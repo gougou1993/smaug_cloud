@@ -36,7 +36,7 @@ public class TestServiceImpl extends AbstractService implements TestService {
 
     @Autowired
     private UserEntityMapper userEntityMapper;
-    
+
 
     @Override
     public String test() {
@@ -44,7 +44,7 @@ public class TestServiceImpl extends AbstractService implements TestService {
             String key = "naonao" + i;
             smaugJedisUtil.set(key, key, 300);
         }
-
+        logger.info("redis");
         return smaugJedisUtil.get("naonao1");
     }
 
