@@ -46,7 +46,7 @@ subprojects {
         compile('org.apache.logging.log4j:log4j-core:2.8.2')
         compile('org.apache.logging.log4j:log4j-web:2.8.2')
         compile 'org.springframework.boot:spring-boot-starter-data-redis:1.5.8.RELEASE'
-
+        compile 'org.springframework.retry:spring-retry:1.1.2.RELEASE'
 
         compile "org.springframework.boot:spring-boot-starter-jersey:1.5.1.RELEASE"
         compile 'mysql:mysql-connector-java:6.0.6'

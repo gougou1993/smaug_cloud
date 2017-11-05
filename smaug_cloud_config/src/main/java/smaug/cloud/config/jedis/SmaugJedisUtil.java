@@ -3,6 +3,7 @@ package smaug.cloud.config.jedis;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.retry.support.RetryTemplate;
 import org.springframework.stereotype.Component;
 import redis.clients.jedis.JedisCluster;
 
@@ -16,8 +17,23 @@ public class SmaugJedisUtil implements JedisUtil {
     @Autowired
     private JedisCluster jedisCluster;
 
+    private RetryTemplate retryTemplate;
+
+    public SmaugJedisUtil(JedisCluster jedisCluster, RetryTemplate retryTemplate) {
+        this.jedisCluster = jedisCluster;
+        this.retryTemplate = retryTemplate;
+    }
+
     @Override
     public void set(String key, String value) {
+        retryTemplate.execute(
+                context -> jedisCluster.set(key, value),
+                context -> {
+                    logger.info(": set =>  key:" + key + ", value:" + value
+                            + ", retrying at " + context.getRetryCount() + " times", context.getLastThrowable());
+                    return jedisCluster.set(key, value);
+                }
+        );
         jedisCluster.set(key, value);
     }
 
@@ -28,7 +44,13 @@ public class SmaugJedisUtil implements JedisUtil {
 
     @Override
     public void set(String key, String value, int expireSeconds) {
-        set(key, value);
-        jedisCluster.expire(key, expireSeconds);
+        retryTemplate.execute(
+                context -> jedisCluster.setex(key, expireSeconds, value),
+                context -> {
+                    logger.info(": set =>  key:" + key + ", value:" + value + ", expiredSeconds:" + expireSeconds
+                            + ", retrying at " + context.getRetryCount() + " times", context.getLastThrowable());
+                    return jedisCluster.setex(key, expireSeconds, value);
+                }
+        );
     }
 }
