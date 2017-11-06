@@ -28,15 +28,15 @@ public class TestServiceImpl extends AbstractService implements TestService {
 
     @Override
     public String test() {
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             String key = "naonao" + i;
-            smaugJedisUtil.set(key, key, 300);
+            //smaugJedisUtil.set(key, key, 300);
         }
         logger.info("redis");
         Destination destination = new ActiveMQQueue("mytest.queue");
         activeMQProducer.sendMessage(destination, "闹闹不要闹");
 
-        return smaugJedisUtil.get("naonao1");
+        return "naonao1";
     }
 
     @Override

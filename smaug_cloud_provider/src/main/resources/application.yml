@@ -34,6 +34,7 @@ spring:
     pool:
       enabled: false
 
+
 server:
   port: 4001
   context-path: /smaug
