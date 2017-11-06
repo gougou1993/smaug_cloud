@@ -28,3 +28,12 @@ spring:
       maxWaitMills: 3000
       testOnBorrow: true
       maxTotal: 4
+  activemq:
+    broker-url: failover:(tcp://10.0.21.56:61616,tcp://10.0.21.65:61616)?jms.useAsyncSend=true&randomize=false&backup=true&jms.prefetchPolicy.queuePrefetch=5
+    in-memory: true
+    pool:
+      enabled: false
+
+server:
+  port: 4001
+  context-path: /smaug

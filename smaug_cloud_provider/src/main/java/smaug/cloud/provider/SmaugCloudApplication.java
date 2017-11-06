@@ -22,7 +22,7 @@ import smaug.cloud.config.jerseryConfig.AnnotationJerseyConfig;
  */
 
 @SpringBootApplication
-@ComponentScan(value = {"smaug.cloud.config", "smaug.cloud.provider", "smaug.cloud.common"})
+@ComponentScan(value = {"smaug.cloud.config", "smaug.cloud.provider", "smaug.cloud.common", "smaug.cloud.consumer"})
 @EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class})
 @MapperScan(basePackages = "smaug.cloud.provider.mappers")
 public class SmaugCloudApplication {
