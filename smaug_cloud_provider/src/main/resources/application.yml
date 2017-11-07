@@ -1,40 +1,6 @@
-druid:
-  type: com.alibaba.druid.pool.DruidDataSource
-  smaug:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    initial-size: 10
-    min-idle: 1
-    max-active: 10
-    test-on-borrow: true
-    demo:
-      url: jdbc:mysql://localhost:3306/demo?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&tinyInt1isBit=false&allowMultiQueries=true&useSSL=false
-      username: root
-      password: 123456
-    article:
-      url: jdbc:mysql://localhost:3306/xiaoyun?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&tinyInt1isBit=false&allowMultiQueries=true&useSSL=false
-      username: root
-      password: 123456
-
 logging:
   config: classpath:log4j2.xml
 
 spring:
-  redis:
-    cluster:
-      nodes: 10.0.19.67:6379,10.0.19.68:6379,10.0.19.82:6379,10.0.19.83:6379
-      testOnReturn: true
-      maxIdle: 10
-      minIdle: 2
-      maxWaitMills: 3000
-      testOnBorrow: true
-      maxTotal: 4
-  activemq:
-    broker-url: failover:(tcp://10.0.21.56:61616,tcp://10.0.21.65:61616)?jms.useAsyncSend=true&randomize=false&backup=true&jms.prefetchPolicy.queuePrefetch=5
-    in-memory: true
-    pool:
-      enabled: false
-
-
-server:
-  port: 4001
-  context-path: /smaug
+  profiles:
+    active: prod
