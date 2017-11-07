@@ -3,6 +3,8 @@ package smaug.cloud.provider;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter4;
+import org.apache.activemq.command.ActiveMQQueue;
+import org.apache.activemq.command.ActiveMQTopic;
 import org.glassfish.jersey.servlet.ServletContainer;
 import org.glassfish.jersey.servlet.ServletProperties;
 import org.mybatis.spring.annotation.MapperScan;
@@ -16,6 +18,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.converter.HttpMessageConverter;
 import smaug.cloud.config.jerseryConfig.AnnotationJerseyConfig;
+
+import javax.jms.Queue;
+import javax.jms.Topic;
 
 /**
  * Created by Allen on 17/10/10.
@@ -61,6 +66,16 @@ public class SmaugCloudApplication {
 
         HttpMessageConverter<?> httpConverter = converter;
         return new HttpMessageConverters(httpConverter);
+    }
+
+    @Bean
+    public Queue queue(){
+        return new ActiveMQQueue("mytest.queue");
+    }
+
+    @Bean
+    public Topic topic() {
+        return new ActiveMQTopic("mytest.topic");
     }
 
 }

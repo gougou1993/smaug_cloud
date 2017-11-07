@@ -12,6 +12,7 @@ import smaug.cloud.common.utils.mq.ActiveMQProducer;
 import smaug.cloud.data.entity.article.ArticleEntity;
 import smaug.cloud.data.entity.demo.UserEntity;
 import javax.jms.Destination;
+import javax.jms.Queue;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -24,7 +25,6 @@ public class TestServiceImpl extends AbstractService implements TestService {
 
     @Autowired
     private ActiveMQProducer activeMQProducer;
-
 
     @Override
     public String test() {

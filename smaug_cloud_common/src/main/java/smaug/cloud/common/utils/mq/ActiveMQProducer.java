@@ -8,6 +8,7 @@ import org.springframework.jms.core.JmsMessagingTemplate;
 import org.springframework.stereotype.Service;
 
 import javax.jms.Destination;
+import javax.jms.Queue;
 
 /**
  * author Allen
@@ -21,8 +22,16 @@ public class ActiveMQProducer {
     @Autowired
     private JmsMessagingTemplate jmsMessagingTemplate;
 
+    @Autowired
+    private Queue queue;
+
     public void sendMessage(Destination destination, final String msg) {
         logger.info("消息发送");
-        jmsMessagingTemplate.convertAndSend(destination, msg);
+        //jmsMessagingTemplate.convertAndSend(destination, msg);
+        sendQueue(msg);
+    }
+
+    public void sendQueue(String text) {
+        jmsMessagingTemplate.convertAndSend(queue,"naonao");
     }
 }
