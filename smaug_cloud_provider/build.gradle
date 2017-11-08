@@ -12,10 +12,8 @@ dependencies {
     compile(project(":smaug_cloud_data"))
     compile(project(":smaug_cloud_config"))
 
-    compile('org.springframework.boot:spring-boot-starter:1.5.2.RELEASE') {
-        exclude(module: 'spring-boot-starter-logging')
-    }
-    compile 'org.mybatis.spring.boot:mybatis-spring-boot-starter:1.1.1'
+
+
     compile 'com.alibaba:druid:1.1.1'
     compile "org.springframework.boot:spring-boot-starter-jersey"
     compile 'org.projectlombok:lombok:1.16.18'
