@@ -8,6 +8,7 @@ import smaug.cloud.api.interfaces.TestService;
 import smaug.cloud.api.vos.article.ArticleResponse;
 import smaug.cloud.api.vos.queue.Queuing;
 import smaug.cloud.api.vos.user.UserResponse;
+import smaug.cloud.common.consts.MQConst;
 import smaug.cloud.common.utils.mq.ActiveMQProducer;
 import smaug.cloud.data.entity.article.ArticleEntity;
 import smaug.cloud.data.entity.demo.UserEntity;
@@ -28,15 +29,8 @@ public class TestServiceImpl extends AbstractService implements TestService {
 
     @Override
     public String test() {
-        for (int i = 0; i < 10; i++) {
-            String key = "naonao" + i;
-            //smaugJedisUtil.set(key, key, 300);
-        }
-        logger.info("redis");
-        Destination destination = new ActiveMQQueue("mytest.queue");
-        activeMQProducer.sendMessage(destination, "闹闹不要闹");
-
-        return "naonao1";
+        commonMessageUtil.convertAndSend("wowoxiangdemandaren");
+        return mqConst.getSmaugCommonQueue();
     }
 
     @Override

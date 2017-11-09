@@ -2,8 +2,10 @@ package smaug.cloud.provider.consumers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
+import smaug.cloud.common.consts.MQConst;
 
 /**
  * author Allen
@@ -16,7 +18,8 @@ import org.springframework.stereotype.Component;
 public class ActiveConsumer {
     protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @JmsListener(destination = "mytest.queue")
+
+    @JmsListener(destination = "${spring.activemq.smaugCommonQueue}")
     public void receiveQueue(String text) {
         logger.info("Consumer收到的报文为:" + text);
     }

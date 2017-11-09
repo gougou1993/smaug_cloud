@@ -21,10 +21,12 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.converter.HttpMessageConverter;
+import smaug.cloud.common.utils.mq.SmaugMessageUtil;
 import smaug.cloud.config.jerseryConfig.AnnotationJerseyConfig;
 
 import javax.jms.Queue;
 import javax.jms.Topic;
+import java.util.Arrays;
 
 /**
  * Created by Allen on 17/10/10.
@@ -42,6 +44,15 @@ public class SmaugCloudApplication {
 
     @Value("${spring.activemq.pool.max-connections}")
     private int mqMaxConnections;
+
+    @Value("${spring.activemq.receiveTimeOut}")
+    private long receiveTimeOut;
+
+    @Value(("${spring.activemq.autoBackUp}"))
+    private boolean autoBackUp;
+
+    @Value("${spring.activemq.smaugCommonQueue}")
+    private String smaugCommonQueue;
 
     public static void main(String[] args) {
         //SpringApplication.run(SmaugCloudApplication.class, args);
@@ -82,7 +93,7 @@ public class SmaugCloudApplication {
     }
 
     @Bean
-    public Queue queue(){
+    public Queue queue() {
         return new ActiveMQQueue("mytest.queue");
     }
 
@@ -92,6 +103,11 @@ public class SmaugCloudApplication {
     }
 
 
+    /**
+     * mq 连接池配置
+     *
+     * @return
+     */
     @Bean
     public PooledConnectionFactory commonConnectionFactory() {
         ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory();
@@ -102,5 +118,12 @@ public class SmaugCloudApplication {
         factory.setConnectionFactory(activeMQConnectionFactory);
         factory.setCreateConnectionOnStartup(false);
         return factory;
+    }
+
+    @Bean(name = "commonMessageUtil")
+    public SmaugMessageUtil commonMessageUtil() {
+        SmaugMessageUtil smaugMessageUtil = new SmaugMessageUtil(commonConnectionFactory(), receiveTimeOut, Arrays.asList(smaugCommonQueue));
+        smaugMessageUtil.setAutoBackUp(autoBackUp);
+        return smaugMessageUtil;
     }
 }

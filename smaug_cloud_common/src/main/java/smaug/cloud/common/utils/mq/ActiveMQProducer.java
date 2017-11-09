@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsMessagingTemplate;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import javax.jms.Destination;
 import javax.jms.Queue;
 
@@ -19,11 +20,14 @@ import javax.jms.Queue;
 public class ActiveMQProducer {
     protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Autowired
-    private JmsMessagingTemplate jmsMessagingTemplate;
+//    @Autowired
+//    private JmsMessagingTemplate jmsMessagingTemplate;
+//
+//    @Autowired
+//    private Queue queue;
 
-    @Autowired
-    private Queue queue;
+    @Resource(name = "commonMessageUtil")
+    private SmaugMessageUtil commonMessageUtil;
 
     public void sendMessage(Destination destination, final String msg) {
         logger.info("消息发送");
@@ -32,6 +36,6 @@ public class ActiveMQProducer {
     }
 
     public void sendQueue(String text) {
-        jmsMessagingTemplate.convertAndSend(queue,"naonao");
+        //commonMessageUtil.convertAndSend(queue,"naonao");
     }
 }

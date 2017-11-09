@@ -34,9 +34,13 @@ spring:
     pool:
       enabled: false
       max-connections: 5000
+    autoBackUp: true
+    receiveTimeOut: 5000
+    smaugCommonQueue: smaugCommonQueue
 
 server:
   port: 5001
+  context-path: /smaug
 eureka:
   instance:
     hostname: localhost

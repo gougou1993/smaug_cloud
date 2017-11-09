@@ -33,6 +33,22 @@ spring:
     in-memory: true
     pool:
       enabled: false
+      max-connections: 5000
+    autoBackUp: false
+    receiveTimeOut: 5000
+    smaugCommonQueue: smaugCommonQueue
+
 server:
-  port: 4001
+  port: 5001
   context-path: /smaug
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: localhost:5001/eureka
+  server:
+    enable-self-preservation: false
+    #eviction-interval-timer-in-ms: 40

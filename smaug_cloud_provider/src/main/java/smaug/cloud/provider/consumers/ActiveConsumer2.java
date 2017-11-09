@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 public class ActiveConsumer2 {
     protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @JmsListener(destination = "mytest.queue")
+    @JmsListener(destination = "${spring.activemq.smaugCommonQueue}")
     public void receiveQueue(String text) {
         logger.info("Consumer2收到的报文为:" + text);
     }
