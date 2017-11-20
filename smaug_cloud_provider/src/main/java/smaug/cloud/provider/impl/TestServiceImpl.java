@@ -23,6 +23,7 @@ public class TestServiceImpl extends AbstractService implements TestService {
     @Override
     public String test() {
         commonMessageUtil.convertAndSend("胖云是笨蛋");
+        mailUtil.sendTextMail("test", "胖云是笨蛋");
         return "succ";
     }
 

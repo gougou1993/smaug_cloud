@@ -21,12 +21,14 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.converter.HttpMessageConverter;
+import smaug.cloud.common.utils.mail.MailUtil;
 import smaug.cloud.common.utils.mq.SmaugMessageUtil;
 import smaug.cloud.config.jerseryConfig.AnnotationJerseyConfig;
 
 import javax.jms.Queue;
 import javax.jms.Topic;
 import java.util.Arrays;
+import java.util.Properties;
 
 /**
  * Created by Allen on 17/10/10.
@@ -53,6 +55,25 @@ public class SmaugCloudApplication {
 
     @Value("${spring.activemq.smaugCommonQueue}")
     private String smaugCommonQueue;
+
+    @Value("${spring.mail.host}")
+    private String smtpHost;
+
+    @Value("${spring.mail.port}")
+    private String smtpPort;
+
+    @Value("${spring.mail.username}")
+    private String username;
+
+    @Value("${spring.mail.password}")
+    private String userPassword;
+
+    @Value("${spring.mail.nickname}")
+    private String nickname;
+
+    @Value("${spring.mail.receiver}")
+    private String receiver;
+
 
     public static void main(String[] args) {
         //SpringApplication.run(SmaugCloudApplication.class, args);
@@ -125,5 +146,18 @@ public class SmaugCloudApplication {
         SmaugMessageUtil smaugMessageUtil = new SmaugMessageUtil(commonConnectionFactory(), receiveTimeOut, Arrays.asList(smaugCommonQueue));
         smaugMessageUtil.setAutoBackUp(autoBackUp);
         return smaugMessageUtil;
+    }
+
+    @Bean(name = "mailUtil")
+    public MailUtil mailUtil() {
+        Properties properties = new Properties();
+        properties.setProperty("smtpHost", smtpHost);
+        properties.setProperty("smtpPort", smtpPort);
+        properties.setProperty("userName", username);
+        properties.setProperty("userPassword", userPassword);
+        properties.setProperty("nickName", nickname);
+        properties.setProperty("receiver", receiver);
+
+        return new MailUtil(properties, true);
     }
 }

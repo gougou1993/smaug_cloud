@@ -7,6 +7,7 @@ import smaug.cloud.common.consts.MQConst;
 import smaug.cloud.common.utils.cache.JedisUtil;
 import smaug.cloud.common.utils.cache.SmaugJedisUtil;
 import smaug.cloud.common.utils.jsons.FastJsonUtil;
+import smaug.cloud.common.utils.mail.MailUtil;
 import smaug.cloud.common.utils.mq.SmaugMessageUtil;
 
 import javax.annotation.Resource;
@@ -28,4 +29,7 @@ public class AbstractService {
 
     @Resource(name = "commonMessageUtil")
     protected SmaugMessageUtil commonMessageUtil;
+
+    @Resource(name = "mailUtil")
+    protected MailUtil mailUtil;
 }

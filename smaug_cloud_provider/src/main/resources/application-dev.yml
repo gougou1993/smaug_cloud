@@ -37,6 +37,13 @@ spring:
     autoBackUp: false
     receiveTimeOut: 5000
     smaugCommonQueue: smaugCommonQueue
+  mail:
+    host: smtp.exmail.qq.com
+    port: 465
+    username: 11@11.com
+    password: 123423
+    nickname: naonao
+    receiver: smaug.smaug;
 
 server:
   port: 5001
