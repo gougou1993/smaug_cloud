@@ -22,7 +22,8 @@ dependencies {
     compile 'org.jboss.resteasy:resteasy-netty:3.0.14.Final'
     compile 'org.mybatis:mybatis:3.2.1'
     compile 'tk.mybatis:mapper:3.3.2'
-
+    compile "com.101tec:zkclient:0.8.1"
+    compile 'org.apache.zookeeper:zookeeper:3.4.8'
     compile 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.8.9'
     compile 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.8.9'
 

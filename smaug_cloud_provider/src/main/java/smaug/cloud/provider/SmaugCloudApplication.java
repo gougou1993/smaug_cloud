@@ -3,6 +3,7 @@ package smaug.cloud.provider;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter4;
+import org.I0Itec.zkclient.ZkClient;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.command.ActiveMQQueue;
 import org.apache.activemq.command.ActiveMQTopic;
@@ -74,6 +75,8 @@ public class SmaugCloudApplication {
     @Value("${spring.mail.receiver}")
     private String receiver;
 
+    @Value("${zk-host}")
+    private String zkHost;
 
     public static void main(String[] args) {
         //SpringApplication.run(SmaugCloudApplication.class, args);
@@ -159,5 +162,10 @@ public class SmaugCloudApplication {
         properties.setProperty("receiver", receiver);
 
         return new MailUtil(properties, true);
+    }
+
+    @Bean(name = "zkClient")
+    public ZkClient zkClient() {
+        return new ZkClient(zkHost);
     }
 }

@@ -65,6 +65,9 @@ subprojects {
         compile 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.8.9'
         compile 'com.alibaba:fastjson:1.2.38'
         compile 'cglib:cglib:3.2.5'
+        compile "com.101tec:zkclient:0.2"
+        compile 'org.apache.zookeeper:zookeeper:3.4.8'
+
         testCompile 'org.springframework.boot:spring-boot-starter-test:1.5.7.RELEASE'
     }
 }

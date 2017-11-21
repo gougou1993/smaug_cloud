@@ -45,6 +45,8 @@ spring:
     nickname: naonao
     receiver: smaug.smaug;
 
+zk-host: 10.0.21.53:2181,10.0.21.62:2181,10.0.21.71:2181
+
 server:
   port: 5001
   context-path: /smaug
@@ -59,3 +61,4 @@ eureka:
   server:
     enable-self-preservation: false
     #eviction-interval-timer-in-ms: 40
+
