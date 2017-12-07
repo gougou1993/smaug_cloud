@@ -6,9 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
-import smaug.cloud.api.vos.test.TestResponse;
 import smaug.cloud.common.utils.jsons.FastJsonUtil;
 import smaug.cloud.provider.SmaugCloudApplication;
 import smaug.cloud.provider.impl.TestServiceImpl;
@@ -30,7 +28,7 @@ public class DemoTest {
 
     @Test
     public void testService() {
-//        TestResponse response = testService.getUser();
-//        logger.info(jsonUtil.toJson(response));
+        String response = testService.test();
+        logger.info(jsonUtil.toJson(response));
     }
 }

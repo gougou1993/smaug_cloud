@@ -3,7 +3,6 @@ package smaug.cloud.provider;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter4;
-import org.I0Itec.zkclient.ZkClient;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.command.ActiveMQQueue;
 import org.apache.activemq.command.ActiveMQTopic;
@@ -22,6 +21,8 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.converter.HttpMessageConverter;
+import smaug.cloud.common.utils.jsons.FastJsonUtil;
+import smaug.cloud.common.utils.jsons.JsonUtil;
 import smaug.cloud.common.utils.mail.MailUtil;
 import smaug.cloud.common.utils.mq.SmaugMessageUtil;
 import smaug.cloud.config.jerseryConfig.AnnotationJerseyConfig;
@@ -81,6 +82,11 @@ public class SmaugCloudApplication {
     public static void main(String[] args) {
         //SpringApplication.run(SmaugCloudApplication.class, args);
         new SpringApplicationBuilder(SmaugCloudApplication.class).web(true).run(args);
+    }
+
+    @Bean
+    public JsonUtil jsonUtil() {
+        return new FastJsonUtil();
     }
 
     @Bean
@@ -164,8 +170,4 @@ public class SmaugCloudApplication {
         return new MailUtil(properties, true);
     }
 
-    @Bean(name = "zkClient")
-    public ZkClient zkClient() {
-        return new ZkClient(zkHost);
-    }
 }
